@@ -1,4 +1,0 @@
-/ {
-    compatible = "zmk,shield";
-};
-

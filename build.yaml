@@ -4,4 +4,6 @@ include:
   - board: nice_nano_v2
     shield: klor_right
   - board: seeeduino_xiao_ble
-    shield: settings_reset prospector_adapter
+    shield: klor_dongle prospector_adapter
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
