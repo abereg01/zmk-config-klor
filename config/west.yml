@@ -1,3 +1,4 @@
+# config/west.yml
 manifest:
   remotes:
     - name: zmkfirmware
@@ -7,7 +8,8 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # TIP: prospector can be sensitive to upstream changes; pin ZMK (see note below)
+      revision: v0.2
       import: app/west.yml
     - name: prospector-zmk-module
       remote: carrefinho

@@ -1,5 +1,10 @@
-on: [push, pull_request, workflow_dispatch]
+name: Build ZMK firmware
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # Pin to ZMK release that matches west.yml (safer for Prospector)
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2
