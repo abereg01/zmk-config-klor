@@ -1,5 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 
+#include "klor.dtsi"
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
