@@ -1,13 +1,20 @@
 include:
+  # KLOR halves (nice!nano v2) — explicitly peripherals (not central)
   - board: nice_nano_v2
     shield: klor_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano_v2
     shield: klor_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+  # Settings reset for the halves (clears bonding when you need it)
   - board: nice_nano_v2
     shield: settings_reset
+
+  # Prospector dongle on Seeeduino XIAO BLE (+ adapter shield)
   - board: seeeduino_xiao_ble
     shield: "klor_dongle prospector_adapter"
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # Settings reset for the dongle too
   - board: seeeduino_xiao_ble
     shield: settings_reset
-

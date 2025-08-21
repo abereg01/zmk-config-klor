@@ -1,10 +1,4 @@
-/*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
-#include "klor.dtsi"
+/* SPDX-License-Identifier: MIT */
 
 / {
     chosen {
