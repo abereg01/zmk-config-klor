@@ -6,5 +6,4 @@ on:
 
 jobs:
   build:
-    # Pin to ZMK release that matches west.yml (safer for Prospector)
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
