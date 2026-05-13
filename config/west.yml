@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: abereg01
+      url-base: https://github.com/abereg01
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
+    - name: prospector
+      remote: abereg01
+      revision: main
   self:
     path: config
