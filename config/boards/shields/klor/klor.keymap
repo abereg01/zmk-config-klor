@@ -49,6 +49,24 @@
             bindings = <&hm LCTRL A>, <&kp RA(A)>;
         };
 
+        // Triple-tap Q → bootloader reset
+        td_q: tap_dance_q {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Q";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp Q>, <&kp Q>, <&bootloader>;
+        };
+
+        // Triple-tap P → bootloader reset
+        td_p: tap_dance_p {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_P";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp P>, <&kp P>, <&bootloader>;
+        };
+
     };
 
     combos {
@@ -93,7 +111,7 @@ label= "BASE"                                                  ;
    SPC/RSE = tap SPACE / hold RAISE                                                                                   */
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp I     &kp O     &kp P     &kp SEMI
+              &td_q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp I     &kp O     &td_p     &kp SEMI
     &kp TAB   &td_a     &hm LALT S  &hm LSHFT D  &hm LGUI F  &kp G                  &kp H     &hm RGUI J  &hm RSHFT K  &hm RALT L  &hm RCTRL SEMI  &kp SQT
     &kp DEL   &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
                                   &mo NNL1  &kp SPACE &mo LOWER &trans     &trans    &kp RET   &lt RAISE SPACE  &mo NNL2
@@ -142,7 +160,7 @@ label= "RAISE"                                                 ;
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp RA(U) &trans    &trans
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &kp RA(O) &trans
+    &kp RA(A) &trans    &trans    &trans    &trans    &trans                         &BSPC    &trans    &trans    &trans    &kp RA(O) &trans
     &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                   &mo ADJUST &trans   &trans    &trans     &trans    &trans    &trans    &trans
             >;
