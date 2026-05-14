@@ -126,17 +126,17 @@ bindings = <
 label= "LOWER"                                                 ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │  EPWR   │         │   UP    │         │    {    │                    │    }    │    7    │    8    │    9    │    +    │
+             │         │         │   UP    │         │    {    │                    │    }    │    7    │    8    │    9    │    +    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │ RGB EFF │  LEFT   │  DOWN   │  RIGHT  │    [    │                    │    ]    │    4    │    5    │    6    │    -    │         │
+   │         │         │  LEFT   │  DOWN   │  RIGHT  │    [    │                    │    ]    │    4    │    5    │    6    │    -    │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
    │         │         │  PG UP  │  CAPS   │  PG DN  │    (    ││        ││        ││    )    │    1    │    2    │    3    │  Macro  │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │         ││         │  DEL    │    0    │         │         */
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &ext_power EP_TOG  &trans    &kp UP    &trans    &kp LBRC               &kp RBRC  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_PLUS
-    &trans    &rgb_ug RGB_EFF    &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT               &kp RBKT  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MINUS &trans
+              &trans  &trans    &kp UP    &trans    &kp LBRC               &kp RBRC  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_PLUS
+    &trans    &trans    &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT               &kp RBKT  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MINUS &trans
     &trans    &trans    &kp PG_UP &kp CAPS  &kp PG_DN &kp LPAR  &trans     &trans    &kp RPAR  &kp KP_N1 &kp KP_N2 &kp KP_N3 &macro_siai &trans
                                   &trans    &trans    &trans    &trans     &trans    &kp DELETE &kp KP_N0 &trans
             >;
@@ -150,16 +150,16 @@ bindings = <
 label= "RAISE"                                                 ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │         │         │         │         │         │                    │         │         │    Ü    │         │         │
+             │         │         │         │         │         │                    │         │         │         │         │         │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    Ä    │         │    ß    │         │         │         │                    │         │         │         │         │    Ö    │         │
+   │         │         │         │         │         │         │                    │         │         │         │         │    Ö    │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
    │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │ ADJUST  │         │         │         ││         │         │         │         │         */
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp RA(U) &trans    &trans
+              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans &trans    &trans
     &trans    &trans    &trans    &trans    &trans    &trans                         &BSPC     &trans    &trans    &trans    &kp RA(O) &trans
     &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                   &mo ADJUST &trans   &trans    &trans     &trans    &trans    &trans    &trans
@@ -174,18 +174,18 @@ bindings = <
 label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │ BT CLR  │         │         │         │         │                    │         │         │         │         │ BT CLR  │
+             │         │         │         │         │         │                    │         │         │         │         │         │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │ BT NXT  │         │         │         │         │                    │         │         │         │ BT NXT  │         │         │
+   │         │         │         │         │         │         │                    │         │         │         │         │         │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │ BT PRV  │         │         │         │         ││        ││        ││ BT PRV  │         │         │         │         │         │
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │         ││         │         │         │         │         */
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &bt BT_CLR &trans   &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &bt BT_CLR
-    &trans    &bt BT_NXT &trans   &trans    &trans    &trans                         &trans    &trans    &trans    &bt BT_NXT &trans   &trans
-    &trans    &bt BT_PRV &trans   &trans    &trans    &trans    &trans     &trans    &bt BT_PRV &trans   &trans    &trans    &trans    &trans
+              &trans    &trans   &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
+    &trans    &trans    &trans   &trans    &trans    &trans                         &trans    &trans    &trans    &trans &trans   &trans
+    &trans    &trans    &trans   &trans    &trans    &trans    &trans     &trans    &trans  &trans   &trans    &trans    &trans    &trans
                                   &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
