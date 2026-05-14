@@ -160,7 +160,7 @@ label= "RAISE"                                                 ;
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp RA(U) &trans    &trans
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                         &BSPC     &trans    &trans    &trans    &kp RA(O) &trans
+    &trans    &trans    &trans    &trans    &trans    &trans                         &BSPC     &trans    &trans    &trans    &kp RA(O) &trans
     &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                   &mo ADJUST &trans   &trans    &trans     &trans    &trans    &trans    &trans
             >;
@@ -217,8 +217,8 @@ label= "NNL2"                                                  ;
 // Placeholder — fill in as needed
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
-    &trans    &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans    &trans
+              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp UP    &trans    &trans
+    &trans    &trans    &trans    &trans    &trans    &trans                         &trans    &kp LEFT    &kp DOWN    &kp RIGHT    &trans    &trans
     &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                   &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
             >;
