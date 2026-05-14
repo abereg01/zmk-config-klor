@@ -5,8 +5,8 @@ if SHIELD_KLOR_LEFT
 
     # ZMK_SPLIT_BLE_ROLE_CENTRAL removed — central role moved to XIAO BLE dongle (Prospector).
     # To revert to left-half-as-central (non-dongle setup), add back:
-    config ZMK_SPLIT_BLE_ROLE_CENTRAL
-        default y
+    #     config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    #         default y
 
 endif # LEFT
 
