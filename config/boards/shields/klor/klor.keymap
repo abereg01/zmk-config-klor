@@ -106,12 +106,12 @@ label= "BASE"                                                  ;
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │  NNL1   │  SPACE  │  LOWER  │  [SAE]  ││  [SAE]  │  ENTER  │ SPC/RSE │  NNL2   │
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘
-   Q/P³ = triple-tap → bootloader reset          [SAE] = absent on Saegewerk
+   Q/P = single-tap → bootloader reset (TEMP)    [SAE] = absent on Saegewerk
    A    = tap A / hold LCTRL / double-tap Ä
    SPC/RSE = tap SPACE / hold RAISE                                                                                   */
 bindings = <
 //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &td_q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp I     &kp O     &td_p     &kp SEMI
+              &bootloader &kp W    &kp E     &kp R     &kp T                          &kp Y     &kp I     &kp O     &bootloader &kp SEMI
     &kp TAB   &td_a     &hm LALT S  &hm LSHFT D  &hm LGUI F  &kp G                  &kp H     &hm RGUI J  &hm RSHFT K  &hm RALT L  &hm RCTRL SEMI  &kp SQT
     &kp DEL   &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
                                   &mo NNL1  &kp SPACE &mo LOWER &trans     &trans    &kp RET   &lt RAISE SPACE  &mo NNL2
