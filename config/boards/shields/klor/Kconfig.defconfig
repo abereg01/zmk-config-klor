@@ -3,8 +3,7 @@ if SHIELD_KLOR_LEFT
     config ZMK_KEYBOARD_NAME
         default "KLOR"
 
-    # ZMK_SPLIT_BLE_ROLE_CENTRAL removed — central role moved to XIAO BLE dongle (Prospector).
-    # To revert to left-half-as-central (non-dongle setup), add back:
+    # Left half is the USB central (no Prospector dongle).
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
         default y
 
