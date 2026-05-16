@@ -39,6 +39,38 @@
             require-prior-idle-ms = <100>;
         };
 
+        // R + T  →  Delete
+        combo_del_top_l {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp DEL>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // Y + I  →  Delete
+        combo_del_top_r {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&kp DEL>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // F + G  →  Backspace
+        combo_bspc_home_l {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp BSPC>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // H + J  →  Backspace
+        combo_bspc_home_r {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp BSPC>;
+            require-prior-idle-ms = <100>;
+        };
+
         // ── Clipboard ──────────────────────────────────────────────────────────
         // X + C  →  Copy
         combo_copy {
@@ -251,6 +283,15 @@
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp RA(A)>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // ── Leader key ─────────────────────────────────────────────────────────
+        // S + D + F  →  Leader (sticky layer — next key comes from LEADER layer)
+        combo_leader {
+            timeout-ms = <50>;
+            key-positions = <12 13 14>;
+            bindings = <&sl LEADER>;
             require-prior-idle-ms = <100>;
         };
 

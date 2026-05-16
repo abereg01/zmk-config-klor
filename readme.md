@@ -88,8 +88,10 @@ Horizontal scroll uses ZMK's pointing layer (`msc SCRL_LEFT/RIGHT`) for reliable
 ### Combos
 All combos use a 50 ms timeout with a 100 ms prior-idle guard. See `combos.dtsi` for the full position map.
 
-**Navigation**
+**Navigation / editing**
 - `W + E` → Escape  &ensp; `S + D` → Tab
+- `R + T` → Delete  &ensp; `Y + I` → Delete
+- `F + G` → Backspace  &ensp; `H + J` → Backspace
 
 **Clipboard**
 - `X + C` → Copy &ensp; `C + V` → Paste &ensp; `X + V` → Cut

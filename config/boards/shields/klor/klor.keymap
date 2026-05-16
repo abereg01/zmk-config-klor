@@ -15,6 +15,7 @@
 #define NAV    4
 #define NUM    5
 #define SCROLL 6
+#define LEADER 7
 
 #include "combos.dtsi"
 #include "macros.dtsi"
@@ -147,6 +148,28 @@ bindings = <
                                     &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
         >;
         sensor-bindings = <&inc_dec_kp UP DOWN &scrl_h>;
+        };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        leader_layer {
+label= "LEADER";
+/*             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+               │         │ CTRL+W  │         │         │         │                    │         │         │         │         │         │
+   ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
+   │           │         │         │         │         │         │                    │         │         │         │         │         │           │
+   ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
+   │           │         │         │         │         │         ││        ││        ││         │         │         │         │         │           │
+   └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
+                                   │         │         │         │         ││         │         │         │         │                                  */
+bindings = <
+//╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
+                &trans    &kp LC(W) &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
+    &trans      &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans    &trans
+    &trans      &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                                    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
+        >;
+        sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
     };

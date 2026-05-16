@@ -1,6 +1,6 @@
-layout: {qmk_keyboard: klor, qmk_layout: LAYOUT_polydactyl}
+layout: {zmk_keyboard: klor}
 layers:
-  base:
+  BASE:
   - Q
   - W
   - E
@@ -30,56 +30,56 @@ layers:
   - V
   - B
   - Enter
-  - scroll
+  - SCROLL
   - N
   - M
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - {t: '?', s: '!'}
   - {type: trans}
-  - adjust
+  - ADJUST
   - Spc
-  - lower
+  - LOWER
   - {type: trans}
   - {type: trans}
   - Enter
-  - {t: Spc, h: raise, s: '&caps_word'}
+  - {t: Spc, h: RAISE, s: '&caps_word'}
   - {t: NAV, h: NUM ⇕}
-  lower:
-  - {type: trans}
-  - {type: trans}
-  - ↑
-  - {type: trans}
-  - '{'
-  - '}'
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP PLUS
-  - {type: trans}
-  - {type: trans}
-  - ←
-  - ↓
-  - →
-  - '['
-  - ']'
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP MINUS
+  LOWER:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - PgUp
-  - CAPS
-  - PgDn
-  - (
   - {type: trans}
   - {type: trans}
-  - )
-  - KP 1
-  - KP 2
-  - KP 3
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - SIAI
   - {type: trans}
   - {type: trans}
@@ -87,10 +87,10 @@ layers:
   - {type: held}
   - {type: trans}
   - {type: trans}
-  - DELETE
-  - KP 0
   - {type: trans}
-  raise:
+  - {type: trans}
+  - {type: trans}
+  RAISE:
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -111,7 +111,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - AGr+ O
+  - AltGr+O
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -127,46 +127,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - adjust
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: held}
-  - {type: trans}
-  adjust:
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - ADJUST
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -174,14 +135,7 @@ layers:
   - {type: trans}
   - {type: held}
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  nav:
-  - {type: trans}
+  ADJUST:
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -218,6 +172,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
+  - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -225,35 +180,80 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  num:
+  NAV:
   - {type: trans}
   - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  NUM:
+  - {type: trans}
+  - F9
   - F10
+  - F11
+  - F12
+  - {type: trans}
+  - KP 7
+  - KP 8
+  - KP 9
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - F5
+  - F6
+  - F7
+  - F8
+  - {type: trans}
+  - KP 4
+  - KP 5
+  - KP 6
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -269,8 +269,8 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
-  scroll:
+  - KP 0
+  SCROLL:
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -301,6 +301,51 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  LEADER:
+  - {type: trans}
+  - Ctl+W
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: held}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -320,12 +365,20 @@ combos:
   k: Esc
 - p: [12, 13]
   k: Tab
+- p: [3, 4]
+  k: Del
+- p: [5, 6]
+  k: Del
+- p: [14, 15]
+  k: Bspc
+- p: [16, 17]
+  k: Bspc
 - p: [24, 25]
-  k: Ctl+ C
+  k: Ctl+C
 - p: [25, 26]
-  k: Ctl+ V
+  k: Ctl+V
 - p: [24, 26]
-  k: Ctl+ X
+  k: Ctl+X
 - p: [4, 15]
   k: '%'
 - p: [3, 14]
@@ -371,4 +424,6 @@ combos:
 - p: [32, 33]
   k: ']'
 - p: [11, 12]
-  k: AGr+ A
+  k: AltGr+A
+- p: [12, 13, 14]
+  k: {t: LEADER, h: sticky}

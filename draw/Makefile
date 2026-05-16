@@ -30,6 +30,11 @@ THEME_CFG := themes/$(THEME).yaml
 MERGED    := /tmp/klor-$(THEME).yaml
 SCALE     := 2        # PNG export scale factor  (2 = ~192 dpi)
 
+# Auto-detect keymap-drawer binary.  pip on macOS installs scripts to
+# ~/Library/Python/3.x/bin which is often not in PATH, so we fall back to
+# the module invocation which works as long as the package is installed.
+KEYMAP_CMD := $(shell command -v keymap 2>/dev/null || echo "python3 -m keymap_drawer")
+
 .PHONY: all clean clean-all
 
 all: base.svg overview.svg keymap.png
@@ -46,20 +51,20 @@ $(MERGED): $(BASE_CFG) $(THEME_CFG) merge-theme.py
 # 2. Parse the ZMK keymap into an intermediate YAML representation
 # ---------------------------------------------------------------------------
 klor.yaml: $(KEYMAP) $(BASE_CFG)
-	keymap -c $(BASE_CFG) parse -z $(KEYMAP) > $@
+	$(KEYMAP_CMD) -c $(BASE_CFG) parse -z $(KEYMAP) > $@
 
 # ---------------------------------------------------------------------------
 # 3. BASE layer only  →  base.svg
 #    Layer names from ZMK parse come out lowercase ("base", "lower", etc.)
 # ---------------------------------------------------------------------------
 base.svg: klor.yaml $(MERGED)
-	keymap -c $(MERGED) draw $< -s base > $@
+	$(KEYMAP_CMD) -c $(MERGED) draw $< -s base > $@
 
 # ---------------------------------------------------------------------------
 # 4. All layers  →  overview.svg
 # ---------------------------------------------------------------------------
 overview.svg: klor.yaml $(MERGED)
-	keymap -c $(MERGED) draw $< > $@
+	$(KEYMAP_CMD) -c $(MERGED) draw $< > $@
 
 # ---------------------------------------------------------------------------
 # 5. PNG export  →  keymap.png
