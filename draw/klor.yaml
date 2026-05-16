@@ -1,0 +1,374 @@
+layout: {qmk_keyboard: klor, qmk_layout: LAYOUT_polydactyl}
+layers:
+  base:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - I
+  - O
+  - P
+  - ;
+  - {type: trans}
+  - {t: A, h: GUI/Ä}
+  - {t: S, h: Alt}
+  - {t: D, h: Shift}
+  - {t: F, h: Ctrl}
+  - G
+  - H
+  - {t: J, h: Gui}
+  - {t: K, h: Shift}
+  - {t: L, h: Alt}
+  - {t: ;, h: Ctrl}
+  - {type: trans}
+  - {type: trans}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - Enter
+  - scroll
+  - N
+  - M
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - {t: '?', s: '!'}
+  - {type: trans}
+  - adjust
+  - Spc
+  - lower
+  - {type: trans}
+  - {type: trans}
+  - Enter
+  - {t: Spc, h: raise, s: '&caps_word'}
+  - {t: NAV, h: NUM ⇕}
+  lower:
+  - {type: trans}
+  - {type: trans}
+  - ↑
+  - {type: trans}
+  - '{'
+  - '}'
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP PLUS
+  - {type: trans}
+  - {type: trans}
+  - ←
+  - ↓
+  - →
+  - '['
+  - ']'
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP MINUS
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - PgUp
+  - CAPS
+  - PgDn
+  - (
+  - {type: trans}
+  - {type: trans}
+  - )
+  - KP 1
+  - KP 2
+  - KP 3
+  - SIAI
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - DELETE
+  - KP 0
+  - {type: trans}
+  raise:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Bspc
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - AGr+ O
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - adjust
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  adjust:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  nav:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  num:
+  - {type: trans}
+  - {type: trans}
+  - F10
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - KP 1
+  - KP 2
+  - KP 3
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  scroll:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+combos:
+- p: [1, 2]
+  k: Esc
+- p: [12, 13]
+  k: Tab
+- p: [24, 25]
+  k: Ctl+ C
+- p: [25, 26]
+  k: Ctl+ V
+- p: [24, 26]
+  k: Ctl+ X
+- p: [4, 15]
+  k: '%'
+- p: [3, 14]
+  k: $
+- p: [2, 13]
+  k: '#'
+- p: [1, 12]
+  k: '@'
+- p: [13, 25]
+  k: \
+- p: [14, 26]
+  k: '='
+- p: [15, 27]
+  k: '~'
+- p: [12, 24]
+  k: {t: '''', h: '`'}
+- p: [5, 16]
+  k: ^
+- p: [6, 17]
+  k: +
+- p: [7, 18]
+  k: '*'
+- p: [8, 19]
+  k: '&'
+- p: [16, 30]
+  k: _
+- p: [17, 31]
+  k: '-'
+- p: [18, 32]
+  k: /
+- p: [19, 33]
+  k: '|'
+- p: [6, 7]
+  k: (
+- p: [7, 8]
+  k: )
+- p: [17, 18]
+  k: (
+- p: [18, 19]
+  k: )
+- p: [31, 32]
+  k: '['
+- p: [32, 33]
+  k: ']'
+- p: [11, 12]
+  k: AGr+ A

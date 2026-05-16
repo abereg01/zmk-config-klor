@@ -1,0 +1,34 @@
+# Dracula theme — https://draculatheme.com
+# Dark purple-toned palette. Always dark; media query keeps it consistent.
+draw_config:
+  dark_mode: false
+  svg_style: |
+    svg.keymap {
+        --color-bg:      #282a36;   /* Background    */
+        --color-key:     #44475a;   /* Current Line  */
+        --color-text:    #f8f8f2;   /* Foreground    */
+        --color-ghost:   #6272a4;   /* Comment       */
+        --color-dendron: #44475a;   /* Current Line  */
+        --color-held:    #6272a4;   /* Comment       */
+
+        --color-fn:      #8be9fd;   /* Cyan          */
+        --color-nav:     #f1fa8c;   /* Yellow        */
+        --color-num:     #ffb86c;   /* Orange        */
+        --color-sys:     #50fa7b;   /* Green         */
+    }
+
+    @media (prefers-color-scheme: dark) {
+        svg.keymap {
+            --color-bg:      #282a36;
+            --color-key:     #44475a;
+            --color-text:    #f8f8f2;
+            --color-ghost:   #6272a4;
+            --color-dendron: #44475a;
+            --color-held:    #6272a4;
+
+            --color-fn:      #8be9fd;
+            --color-nav:     #f1fa8c;
+            --color-num:     #ffb86c;
+            --color-sys:     #50fa7b;
+        }
+    }
