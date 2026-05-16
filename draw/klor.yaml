@@ -7,10 +7,10 @@ layers:
   - R
   - T
   - Y
+  - U
   - I
   - O
   - P
-  - ;
   - {type: trans}
   - {t: A, h: GUI/Ä}
   - {t: S, h: Alt}
@@ -37,15 +37,15 @@ layers:
   - {t: ., s: ':'}
   - {t: '?', s: '!'}
   - {type: trans}
-  - ADJUST
-  - Spc
-  - LOWER
+  - SYSTEM
+  - {t: Spc, h: RAISE}
+  - {type: trans}
   - {type: trans}
   - {type: trans}
   - Enter
-  - {t: Spc, h: RAISE, s: '&caps_word'}
+  - {t: Spc, h: RAISE}
   - {t: NAV, h: NUM ⇕}
-  LOWER:
+  SYSTEM:
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -82,27 +82,27 @@ layers:
   - {type: trans}
   - SIAI
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
   - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
+  - {type: trans}
+  - {type: trans}
   RAISE:
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - OUT TOG
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - BT CLR
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -127,53 +127,8 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - ADJUST
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
   - {type: trans}
   - {type: held}
-  - {type: trans}
-  ADJUST:
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: held}
-  - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -186,22 +141,22 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
+  - PgUp
+  - {type: trans}
+  - ↑
+  - {type: trans}
+  - Home
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - PG DOWN
+  - ←
+  - ↓
+  - →
+  - End
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -317,7 +272,7 @@ layers:
   - {type: trans}
   LEADER:
   - {type: trans}
-  - Ctl+W
+  - ClsTab
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -365,6 +320,7 @@ combos:
   k: Esc
 - p: [12, 13]
   k: Tab
+  l: [BASE]
 - p: [3, 4]
   k: Del
 - p: [5, 6]
@@ -373,57 +329,93 @@ combos:
   k: Bspc
 - p: [16, 17]
   k: Bspc
+- p: [14, 17]
+  k: Caps Word
+  l: [BASE]
 - p: [24, 25]
-  k: Ctl+C
+  k: Copy
+  l: [BASE]
 - p: [25, 26]
-  k: Ctl+V
+  k: Paste
+  l: [BASE]
 - p: [24, 26]
-  k: Ctl+X
+  k: Cut
+  l: [BASE]
+  a: bottom
+  o: 0.15
 - p: [4, 15]
   k: '%'
+  l: [BASE]
 - p: [3, 14]
   k: $
+  l: [BASE]
 - p: [2, 13]
   k: '#'
+  l: [BASE]
 - p: [1, 12]
   k: '@'
+  l: [BASE]
 - p: [13, 25]
   k: \
+  l: [BASE]
 - p: [14, 26]
   k: '='
+  l: [BASE]
 - p: [15, 27]
   k: '~'
+  l: [BASE]
 - p: [12, 24]
   k: {t: '''', h: '`'}
+  l: [BASE]
 - p: [5, 16]
   k: ^
+  l: [BASE]
 - p: [6, 17]
   k: +
+  l: [BASE]
 - p: [7, 18]
   k: '*'
+  l: [BASE]
 - p: [8, 19]
   k: '&'
+  l: [BASE]
 - p: [16, 30]
   k: _
+  l: [BASE]
 - p: [17, 31]
   k: '-'
+  l: [BASE]
 - p: [18, 32]
   k: /
+  l: [BASE]
 - p: [19, 33]
   k: '|'
+  l: [BASE]
 - p: [6, 7]
   k: (
+  l: [BASE]
+  hidden: true
 - p: [7, 8]
   k: )
+  l: [BASE]
+  hidden: true
 - p: [17, 18]
-  k: (
+  k: '{'
+  l: [BASE]
+  hidden: true
 - p: [18, 19]
-  k: )
+  k: '}'
+  l: [BASE]
+  hidden: true
 - p: [31, 32]
-  k: '['
+  k: '{ ['
+  l: [BASE]
 - p: [32, 33]
-  k: ']'
+  k: '} ]'
+  l: [BASE]
 - p: [11, 12]
   k: AltGr+A
+  l: [BASE]
 - p: [12, 13, 14]
   k: {t: LEADER, h: sticky}
+  l: [BASE]

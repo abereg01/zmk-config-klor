@@ -3,10 +3,10 @@
 
         td_a: tap_dance_a {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_A";
+            label = "TD_A_ARING";       // tap → A (GUI when held) | double-tap → Å (A-ring)
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&hm LGUI A>, <&kp RA(A)>;
+            bindings = <&hm LGUI A>, <&kp RA(A)>;  // RA(A) = AltGr+A = Å
         };
 
         td_apos_grave: tap_dance_apos_grave {

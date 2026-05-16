@@ -25,14 +25,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_spc_cw: mod_morph_space_capsword {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_SPC_CW";
-            #binding-cells = <0>;
-            bindings = <&lt RAISE SPACE>, <&caps_word>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         scrl_h: scroll_horizontal {
             compatible = "zmk,behavior-sensor-rotate";
             label = "SCRL_H";

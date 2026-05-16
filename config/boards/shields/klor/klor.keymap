@@ -9,13 +9,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE   0
-#define LOWER  1
+#define SYSTEM 1
 #define RAISE  2
-#define ADJUST 3
-#define NAV    4
-#define NUM    5
-#define SCROLL 6
-#define LEADER 7
+#define NAV    3
+#define NUM    4
+#define SCROLL 5
+#define LEADER 6
 
 #include "combos.dtsi"
 #include "macros.dtsi"
@@ -32,28 +31,28 @@
         base_layer {
 label= "BASE";
 /*             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-               │    Q    │    W    │    E    │    R    │    T    │                    │    Y    │    I    │    O    │    P    │    ;    │
+               │    Q    │    W    │    E    │    R    │    T    │                    │    Y    │    U    │    I    │    O    │    P    │
    ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
-   │    ───    │ A/GUI   │  S/ALT  │ D/SHFT  │  F/CTRL │    G    │                    │    H    │  J/GUI  │ K/SHFT  │  L/ALT  │  ;/CTRL │    ───    │
+   │    ───    │ A/GUI/Å │  S/ALT  │ D/SHFT  │  F/CTRL │    G    │                    │    H    │  J/GUI  │ K/SHFT  │  L/ALT  │  ;/CTRL │    ───    │
    ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
    │    ───    │    Z    │    X    │    C    │    V    │    B    ││ ENTER  ││SCR→H   ││    N    │    M    │   ,/;   │   ./:   │   ?/!   │    ───    │
    └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
-                                   │ ADJUST  │  SPACE  │  LOWER  │   ───   ││   ───   │  ENTER  │SPC/CW   │NAV/NUM  │
+                                   │ SYSTEM  │SPC/RAISE│  ───    │   ───   ││   ───   │  ENTER  │SPC/RAISE│NAV/NUM  │
                                    └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘  */
 bindings = <
 //╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
-                &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp I     &kp O     &kp P     &kp SEMI
+                &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp U     &kp I     &kp O     &kp P
     &trans      &td_a     &hm LALT S  &hm LSHFT D  &hm LCTRL F  &kp G                  &kp H     &hm RGUI J  &hm RSHFT K  &hm RALT L  &hm RCTRL SEMI  &trans
     &trans      &kp Z     &kp X     &kp C     &kp V     &kp B     &kp RET    &mo SCROLL  &kp N     &kp M     &mm_comma &mm_dot   &mm_qmark &trans
-                                    &mo ADJUST &kp SPACE &mo LOWER &trans    &trans    &kp RET   &mm_spc_cw  &td_nav_num
+                                    &mo SYSTEM &lt RAISE SPACE &trans &trans &trans    &kp RET   &lt RAISE SPACE  &td_nav_num
         >;
         sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        lower_layer {
-label= "LOWER";
+        system_layer {
+label= "SYSTEM";
 /*             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
                │         │         │         │         │         │                    │         │         │         │         │         │
    ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
@@ -77,33 +76,19 @@ bindings = <
         raise_layer {
 label= "RAISE";
 /*             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-               │         │         │         │         │         │                    │         │         │         │         │         │
+               │  BT 0   │  BT 1   │  BT 2   │  BT 3   │OUT TOG  │                    │         │         │         │         │         │
    ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
-   │           │         │         │         │         │         │                    │  BSPC   │         │         │         │    Ö    │           │
+   │           │ BT CLR  │         │         │         │         │                    │  BSPC   │         │         │         │    Ö    │           │
    ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
    │           │         │         │         │         │         ││        ││        ││         │         │         │         │         │           │
    └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
-                                   │ ADJUST  │         │         │         ││         │         │         │         │                                  */
+                                   │         │         │         │         ││         │         │         │         │                                  */
 bindings = <
 //╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
-                &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
-    &trans      &trans    &trans    &trans    &trans    &trans                         &kp BSPC  &trans    &trans    &trans    &kp RA(O) &trans
-    &trans      &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                    &mo ADJUST &trans   &trans    &trans     &trans    &trans    &trans    &trans
-        >;
-        sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
-        };
-
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        adjust_layer {
-label= "ADJUST";
-bindings = <
-//╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
-                &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
-    &trans      &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans    &trans
-    &trans      &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG              &trans    &trans    &trans    &trans    &trans
+    &trans      &bt BT_CLR    &trans        &trans        &trans        &trans                    &kp BSPC  &trans    &trans    &trans    &kp RA(O) &trans
+    &trans      &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans    &trans    &trans    &trans    &trans    &trans
+                                            &trans        &trans        &trans    &trans  &trans  &trans    &trans    &trans
         >;
         sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
@@ -114,8 +99,8 @@ bindings = <
 label= "NAV";
 bindings = <
 //╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
-                &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
-    &trans      &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans                         &kp PG_UP    &trans    &kp UP    &trans    &kp HOME
+    &trans      &trans    &trans    &trans    &trans    &trans                         &kp PG_DOWN    &kp LEFT    &kp DOWN    &kp RIGHT    &kp END    &trans
     &trans      &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                     &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
         >;

@@ -3,15 +3,82 @@ parse_config:
     - ../config/boards/shields/klor
 
   raw_binding_map:
-    "&td_a":          { t: A, h: GUI/Ä }
-    "&td_nav_num":    { t: NAV, h: "NUM ⇕" }
-    "&td_apos_grave": { t: "'", h: "`" }
+    # KLOR-specific tap-dance / macros
+    "&td_a":          {t: A, h: GUI/Ä}
+    "&td_nav_num":    {t: NAV, h: "NUM ⇕"}
+    "&td_apos_grave": {t: "'", h: "`"}
     "&macro_siai":    SIAI
 
-  trans_legend: { "t": "", "type": "trans" }
+    # System / BT
+    "&sys_reset":   Reset
+    "&bootloader":  Boot
+    "&caps_word":   Caps Word
+    "&kp LA(F4)":   Close
+
+    "&bt BT_SEL 0": BT 1
+    "&bt BT_SEL 1": BT 2
+    "&bt BT_SEL 2": BT 3
+    "&bt BT_SEL 3": BT 4
+
+    # Clipboard (both LC(key) and Shift-Insert variants)
+    "&kp LC(C)":   Copy
+    "&kp LC(INS)": Copy
+    "&kp LC(X)":   Cut
+    "&kp LC(V)":   Paste
+    "&kp LS(INS)": Paste
+    "&kp LC(Z)":   Undo
+    "&kp LC(W)":   ClsTab
+
+    # Window / desktop management
+    "&kp LG(LC(LEFT))":   PDesk
+    "&kp LG(LC(RIGHT))":  NDesk
+    "&kp LG(LC(LS(A)))":  PinA.
+    "&kp LG(LC(LS(Q)))":  PinW.
+    "&swapper":            NWin
+    "&kp LS(TAB)":         PWin
+
+    # Special behaviours
+    "&dot_spc":     Sentence
+    "&num_dance":   {t: Smart}
+    "&magic_shift": {t: Magic, h: Shift}
+    "&smart_mouse": Smart Mouse
+
+    # Hold-mod combos
+    "&hml LS(LALT)TAB": Tab
+    "&hm_combo_ldr":    Leader
+    "&hm_combo_ldrsh":  Shift+Leader
+    "&hm_combo_lpar":   {t: "< ("}
+    "&hm_combo_rpar":   {t: "> )"}
+    "&kp LBKT":         {t: "{ ["}
+    "&kp RBKT":         {t: "} ]"}
+
+    # Mouse / scroll
+    "&mmv MOVE_UP":    Mouse ↑
+    "&mmv MOVE_DOWN":  Mouse ↓
+    "&mmv MOVE_LEFT":  Mouse ←
+    "&mmv MOVE_RIGHT": Mouse →
+    "&msc SCRL_UP":    Scroll ↑
+    "&msc SCRL_DOWN":  Scroll ↓
+    "&msc SCRL_LEFT":  Scroll ←
+    "&msc SCRL_RIGHT": Scroll →
+    "&mkp LCLK": Left Click
+    "&mkp RCLK": Right Click
+    "&mkp MCLK": Middle Click
+    "&mkp MB4":  Back Click
+    "&mkp MB5":  Forward Click
+
+  trans_legend: {t: "", type: trans}
+
+  zmk_combos:
+    # Position cut combo slightly below so it doesn't overlap the key labels
+    combo_cut: {align: bottom, o: 0.15}
+    # Hide bracket/paren combos that have dedicated keys on other layers
+    combo_lpar_top:  {hidden: true}
+    combo_rpar_top:  {hidden: true}
+    combo_lbrc_home: {hidden: true}
+    combo_rbrc_home: {hidden: true}
 
   zmk_keycode_map:
-    # Modifiers
     LALT:  Alt
     RALT:  Alt
     LCTRL: Ctrl
@@ -21,7 +88,6 @@ parse_config:
     LSHFT: Shift
     RSHFT: Shift
 
-    # Common keys
     BSPC:  Bspc
     DEL:   Del
     ESC:   Esc
@@ -29,20 +95,19 @@ parse_config:
     SPACE: Spc
     TAB:   Tab
 
-    # Navigation
     PG_UP: PgUp
     PG_DN: PgDn
     INS:   Ins
     HOME:  Home
     END:   End
 
-    # Arrows
     UP:    ↑
     DOWN:  ↓
     LEFT:  ←
     RIGHT: →
 
-    # Media — rendered as MDI glyphs
+    K_CANCEL: Cancel
+
     C_MUTE:   $$mdi:volume-off$$
     C_PP:     $$mdi:play-pause$$
     C_VOL_UP: $$mdi:volume-high$$
@@ -50,126 +115,99 @@ parse_config:
     C_NEXT:   $$mdi:skip-forward$$
     C_PREV:   $$mdi:skip-backward$$
 
-    # Symbols
-    AMPERSAND:        "&"
-    AMPS:             "&"
-    APOS:             "'"
-    APOSTROPHE:       "'"
-    ASTERISK:         "*"
-    ASTRK:            "*"
-    AT:               "@"
-    AT_SIGN:          "@"
-    BACKSLASH:        \
-    BSLH:             \
-    CARET:            ^
-    COLON:            ":"
-    COMMA:            ","
-    DLLR:             $
-    DOLLAR:           $
-    DOT:              .
-    DOUBLE_QUOTES:    '"'
-    DQT:              '"'
-    EQUAL:            "="
-    EXCL:             "!"
-    EXCLAMATION:      "!"
-    FSLH:             /
-    GRAVE:            "`"
-    GREATER_THAN:     ">"
-    GT:               ">"
-    HASH:             "#"
-    LBKT:             "["
-    LBRC:             "{"
-    LEFT_BRACE:       "{"
-    LEFT_BRACKET:     "["
-    LEFT_PARENTHESIS: (
-    LESS_THAN:        <
-    LPAR:             (
-    LT:               <
-    MINUS:            "-"
-    NON_US_BACKSLASH: \
-    NON_US_BSLH:      "|"
-    NON_US_HASH:      "#"
-    NUHS:             "#"
-    PERCENT:          "%"
-    PERIOD:           .
-    PIPE:             "|"
-    PIPE2:            "|"
-    PLUS:             +
-    POUND:            "#"
-    PRCNT:            "%"
-    QMARK:            "?"
-    QUESTION:         "?"
-    RBKT:             "]"
-    RBRC:             "}"
-    RIGHT_BRACE:      "}"
-    RIGHT_BRACKET:    "]"
+    AMPERSAND:         "&"
+    AMPS:              "&"
+    APOS:              "'"
+    APOSTROPHE:        "'"
+    ASTERISK:          "*"
+    ASTRK:             "*"
+    AT:                "@"
+    AT_SIGN:           "@"
+    BACKSLASH:         \
+    BSLH:              \
+    CARET:             ^
+    COLON:             ":"
+    COMMA:             ","
+    DLLR:              $
+    DOLLAR:            $
+    DOT:               .
+    DOUBLE_QUOTES:     '"'
+    DQT:               '"'
+    EQUAL:             "="
+    EXCL:              "!"
+    EXCLAMATION:       "!"
+    FSLH:              /
+    GRAVE:             "`"
+    GREATER_THAN:      ">"
+    GT:                ">"
+    HASH:              "#"
+    LBKT:              "["
+    LBRC:              "{"
+    LEFT_BRACE:        "{"
+    LEFT_BRACKET:      "["
+    LEFT_PARENTHESIS:  (
+    LESS_THAN:         <
+    LPAR:              (
+    LT:                <
+    MINUS:             "-"
+    NON_US_BACKSLASH:  \
+    NON_US_BSLH:       "|"
+    NON_US_HASH:       "#"
+    NUHS:              "#"
+    PERCENT:           "%"
+    PERIOD:            .
+    PIPE:              "|"
+    PIPE2:             "|"
+    PLUS:              +
+    POUND:             "#"
+    PRCNT:             "%"
+    QMARK:             "?"
+    QUESTION:          "?"
+    RBKT:              "]"
+    RBRC:              "}"
+    RIGHT_BRACE:       "}"
+    RIGHT_BRACKET:     "]"
     RIGHT_PARENTHESIS: )
-    RPAR:             )
-    SEMI:             ;
-    SEMICOLON:        ;
-    SINGLE_QUOTE:     "'"
-    SLASH:            /
-    SQT:              "'"
-    STAR:             "*"
-    TILDE:            "~"
-    TILDE2:           "~"
-    UNDER:            _
-    UNDERSCORE:       _
+    RPAR:              )
+    SEMI:              ;
+    SEMICOLON:         ;
+    SINGLE_QUOTE:      "'"
+    SLASH:             /
+    SQT:               "'"
+    STAR:              "*"
+    TILDE:             "~"
+    TILDE2:            "~"
+    UNDER:             _
+    UNDERSCORE:        _
 
-# ---------------------------------------------------------------------------
 draw_config:
   append_colon_to_layer_header: false
-  dark_mode: false        # false = light default + CSS dark-mode media query
+  dark_mode: false
   footer_text: "KLOR — ZMK keymap"
-
-  # Glyph sizes (MDI icons)
-  glyph_tap_size:     15
-  glyph_hold_size:    12
+  glyph_tap_size: 15
+  glyph_hold_size: 12
   glyph_shifted_size: 10
-
-  # Layout geometry
-  key_h:   56
-  key_w:   60
-  split_gap: 24
-  combo_w: 30
-  combo_h: 24
-
-  # Padding & spacing
   legend_rel_y: 1
-  outer_pad_w:  10
-  outer_pad_h:  10
-  small_pad:    4
-
-  # Combos shown as separate diagram below the keymap
-  separate_combo_diagrams: true
-  combo_diagrams_scale: 2
+  outer_pad_w: 10
+  outer_pad_h: 10
+  small_pad: 4
 
   svg_style: |
     svg path { fill: inherit; }
 
-    /* =====================================================================
-       THEME: Gruvbox Light  (default)
-       To switch themes, replace the --color-* values below.
-
-       Gruvbox Light  → already set
-       Gruvbox Dark   → uncomment the dark block and remove this light block
-       Nord           → see commented block below
-       Dracula        → see commented block below
-       ===================================================================== */
     svg.keymap {
-        /* --- Gruvbox Light --- */
-        --color-bg:      #7c6f64;
-        --color-key:     #fbf1c7;
-        --color-text:    #3c3836;
-        --color-ghost:   #928374;
-        --color-dendron: #d5c4a1;
-        --color-held:    #bdae93;
+        /* Nord light — Polar Night 4 surround, Snow Storm 3 keys */
+        --color-bg:      #4c566a;   /* Polar Night 4 — SVG surround         */
+        --color-key:     #eceff4;   /* Snow Storm 3  — key surface           */
+        --color-text:    #2e3440;   /* Polar Night 1 — main tap text         */
+        --color-ghost:   #d8dee9;   /* Snow Storm 2  — transparent keys      */
+        --color-dendron: #88c0d0;   /* Frost 2       — combo dashed lines    */
+        --color-held:    #81a1c1;   /* Frost 3       — held/active key       */
 
-        /* Layer-indicator accent colours */
-        --color-fn:      #458588;   /* teal  — top-left  */
-        --color-nav:     #d79921;   /* gold  — top-right */
-        --color-num:     #d65d0e;   /* burnt — bot-left  */
-        --color-sys:     #689d6a;   /* green — bot-right */
+        --color-fn:      #5e81ac;   /* Frost 4       — blue, top-left        */
+        --color-nav:     #d08770;   /* Aurora orange — top-right             */
+        --color-num:     #bf616a;   /* Aurora red    — bottom-left           */
+        --color-sys:     #a3be8c;   /* Aurora green  — bottom-right          */
 
         fill: var(--color-text);
         background-color: var(--color-bg);
@@ -179,49 +217,6 @@ draw_config:
         text-rendering: optimizeLegibility;
     }
 
-    /* --- Gruvbox Dark (alternative — swap with block above) ---
-    svg.keymap {
-        --color-bg:      #282828;
-        --color-key:     #3c3836;
-        --color-text:    #ebdbb2;
-        --color-ghost:   #504945;
-        --color-dendron: #504945;
-        --color-held:    #665c54;
-        --color-fn:      #83a598;
-        --color-nav:     #fabd2f;
-        --color-num:     #fe8019;
-        --color-sys:     #8ec07c;
-    } */
-
-    /* --- Nord (alternative) ---
-    svg.keymap {
-        --color-bg:      #3b4252;
-        --color-key:     #eceff4;
-        --color-text:    #2e3440;
-        --color-ghost:   #4c566a;
-        --color-dendron: #d8dee9;
-        --color-held:    #e5e9f0;
-        --color-fn:      #5e81ac;
-        --color-nav:     #ebcb8b;
-        --color-num:     #d08770;
-        --color-sys:     #a3be8c;
-    } */
-
-    /* --- Dracula (alternative) ---
-    svg.keymap {
-        --color-bg:      #282a36;
-        --color-key:     #44475a;
-        --color-text:    #f8f8f2;
-        --color-ghost:   #6272a4;
-        --color-dendron: #44475a;
-        --color-held:    #6272a4;
-        --color-fn:      #8be9fd;
-        --color-nav:     #f1fa8c;
-        --color-num:     #ffb86c;
-        --color-sys:     #50fa7b;
-    } */
-
-    /* ---- Typography ---- */
     text {
         text-anchor: middle;
         dominant-baseline: middle;
@@ -231,19 +226,17 @@ draw_config:
     text.tap     { font-weight: 500; }
     text.hold    { font-weight: 400; font-size: 13px; }
     text.shifted { font-weight: 400; font-size: 11px; }
-    text.combo, text.left, text.right,
-    text.tl, text.tr, text.bl, text.br { font-size: 10px; }
+    text.combo, text.left, text.right, text.tl, text.tr, text.bl, text.br { font-size: 10px; }
 
     text.hold, text.bl, text.br    { text-anchor: middle; dominant-baseline: auto; }
     text.shifted, text.tl, text.tr { text-anchor: middle; dominant-baseline: hanging; }
-    text.left, text.tl, text.bl   { text-anchor: start; }
-    text.right, text.tr, text.br  { text-anchor: end; }
+    text.left, text.tl, text.bl    { text-anchor: start; }
+    text.right, text.tr, text.br   { text-anchor: end; }
 
     text.layer-activator { text-decoration: underline; }
-    text.combo.hold, text.combo.shifted,
-    text.combo.left, text.combo.right { font-size: 8px; }
+    text.combo.hold, text.combo.shifted, text.combo.left, text.combo.right { font-size: 8px; }
 
-    /* ---- Labels & footer ---- */
+    /* Labels sit on the dark surround — use light key color so they're visible */
     text.label, text.footer {
         fill: var(--color-key);
         stroke: var(--color-bg);
@@ -253,43 +246,41 @@ draw_config:
     text.label  { font-weight: bold; text-anchor: start; }
     text.footer { text-anchor: end; dominant-baseline: auto; }
 
-    /* ---- Key surfaces ---- */
     rect.key, rect.combo, rect.combo-separate { fill: var(--color-key); stroke-width: 0; }
     rect.held, rect.combo.held                { fill: var(--color-held); }
     .layer-Combos rect.key                    { fill: var(--color-ghost); }
 
-    /* ---- Combo dendrons ---- */
-    path.combo {
-        stroke: var(--color-dendron);
-        stroke-width: 2;
-        stroke-dasharray: 2, 3;
-        opacity: 0.45;
-        fill: none;
-    }
+    path.combo { stroke: var(--color-dendron); stroke-width: 2; stroke-dasharray: 2, 3; opacity: 0.45; fill: none; }
 
-    /* ---- Corner accent colours ---- */
     text.tl, use.tl { fill: var(--color-fn); }
     text.tr, use.tr { fill: var(--color-nav); }
     text.bl, use.bl { fill: var(--color-num); }
     text.br, use.br { fill: var(--color-sys); }
 
-    /* ---- Tabler icon compatibility ---- */
+    /* Thumb cluster hold-label accents — keypos numbers for KLOR's 4 thumb keys */
+    .keypos-30 text.hold { fill: var(--color-nav); }
+    .keypos-31 text.hold { fill: var(--color-fn); }
+    .keypos-32 text.hold { fill: var(--color-num); font-size: 15px; }
+    .keypos-32 text.tap  { fill: var(--color-num); }
+    .keypos-33 text.hold { font-size: 15px; }
+
     .icon-tabler > path                             { fill: inherit; stroke: inherit; stroke-width: 2; }
     .icon-tabler > path[stroke="none"][fill="none"] { visibility: hidden; }
 
-    /* ---- Auto dark mode (follows OS preference) ---- */
     @media (prefers-color-scheme: dark) {
         svg.keymap {
-            --color-bg:      #a89984;
-            --color-key:     #282828;
-            --color-text:    #ebdbb2;
-            --color-ghost:   #928374;
-            --color-dendron: #504945;
-            --color-held:    #665c54;
+            --color-bg:      #2e3440;   /* Polar Night 1 — SVG surround      */
+            --color-key:     #3b4252;   /* Polar Night 2 — key surface        */
+            --color-text:    #eceff4;   /* Snow Storm 3  — main tap text      */
+            --color-ghost:   #434c5e;   /* Polar Night 3 — transparent keys   */
+            --color-dendron: #81a1c1;   /* Frost 3       — combo lines        */
+            --color-held:    #4c566a;   /* Polar Night 4 — held key           */
 
-            --color-fn:      #458588;
-            --color-nav:     #fabd2f;
-            --color-num:     #d65d0e;
-            --color-sys:     #689d6a;
+            --color-fn:      #88c0d0;   /* Frost 2       — cyan               */
+            --color-nav:     #ebcb8b;   /* Aurora yellow                      */
+            --color-num:     #d08770;   /* Aurora orange                      */
+            --color-sys:     #a3be8c;   /* Aurora green                       */
         }
+        /* In dark mode the key surface is dark, so labels need light fill */
+        text.label, text.footer { fill: var(--color-text); }
     }
