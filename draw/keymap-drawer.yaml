@@ -20,7 +20,7 @@ parse_config:
     "&bt BT_SEL 2": BT 3
     "&bt BT_SEL 3": BT 4
 
-    # Clipboard (both LC(key) and Shift-Insert variants)
+    # Clipboard
     "&kp LC(C)":   Copy
     "&kp LC(INS)": Copy
     "&kp LC(X)":   Cut
@@ -30,12 +30,12 @@ parse_config:
     "&kp LC(W)":   ClsTab
 
     # Window / desktop management
-    "&kp LG(LC(LEFT))":   PDesk
-    "&kp LG(LC(RIGHT))":  NDesk
-    "&kp LG(LC(LS(A)))":  PinA.
-    "&kp LG(LC(LS(Q)))":  PinW.
-    "&swapper":            NWin
-    "&kp LS(TAB)":         PWin
+    "&kp LG(LC(LEFT))":  PDesk
+    "&kp LG(LC(RIGHT))": NDesk
+    "&kp LG(LC(LS(A)))": PinA.
+    "&kp LG(LC(LS(Q)))": PinW.
+    "&swapper":           NWin
+    "&kp LS(TAB)":        PWin
 
     # Special behaviours
     "&dot_spc":     Sentence
@@ -70,9 +70,7 @@ parse_config:
   trans_legend: {t: "", type: trans}
 
   zmk_combos:
-    # Position cut combo slightly below so it doesn't overlap the key labels
-    combo_cut: {align: bottom, o: 0.15}
-    # Hide bracket/paren combos that have dedicated keys on other layers
+    combo_cut:       {align: bottom, o: 0.15}
     combo_lpar_top:  {hidden: true}
     combo_rpar_top:  {hidden: true}
     combo_lbrc_home: {hidden: true}
@@ -196,18 +194,17 @@ draw_config:
     svg path { fill: inherit; }
 
     svg.keymap {
-        /* Nord light — Polar Night 4 surround, Snow Storm 3 keys */
-        --color-bg:      #4c566a;   /* Polar Night 4 — SVG surround         */
-        --color-key:     #eceff4;   /* Snow Storm 3  — key surface           */
-        --color-text:    #2e3440;   /* Polar Night 1 — main tap text         */
-        --color-ghost:   #d8dee9;   /* Snow Storm 2  — transparent keys      */
-        --color-dendron: #88c0d0;   /* Frost 2       — combo dashed lines    */
-        --color-held:    #81a1c1;   /* Frost 3       — held/active key       */
+        --color-bg:      #7c6f64;
+        --color-key:     #fbf1c7;
+        --color-text:    #3c3836;
+        --color-ghost:   #928374;
+        --color-dendron: #d5c4a1;
+        --color-held:    #bdae93;
 
-        --color-fn:      #5e81ac;   /* Frost 4       — blue, top-left        */
-        --color-nav:     #d08770;   /* Aurora orange — top-right             */
-        --color-num:     #bf616a;   /* Aurora red    — bottom-left           */
-        --color-sys:     #a3be8c;   /* Aurora green  — bottom-right          */
+        --color-fn:      #458588;
+        --color-nav:     #d79921;
+        --color-num:     #d65d0e;
+        --color-sys:     #689d6a;
 
         fill: var(--color-text);
         background-color: var(--color-bg);
@@ -236,7 +233,6 @@ draw_config:
     text.layer-activator { text-decoration: underline; }
     text.combo.hold, text.combo.shifted, text.combo.left, text.combo.right { font-size: 8px; }
 
-    /* Labels sit on the dark surround — use light key color so they're visible */
     text.label, text.footer {
         fill: var(--color-key);
         stroke: var(--color-bg);
@@ -257,7 +253,6 @@ draw_config:
     text.bl, use.bl { fill: var(--color-num); }
     text.br, use.br { fill: var(--color-sys); }
 
-    /* Thumb cluster hold-label accents — keypos numbers for KLOR's 4 thumb keys */
     .keypos-30 text.hold { fill: var(--color-nav); }
     .keypos-31 text.hold { fill: var(--color-fn); }
     .keypos-32 text.hold { fill: var(--color-num); font-size: 15px; }
@@ -269,18 +264,16 @@ draw_config:
 
     @media (prefers-color-scheme: dark) {
         svg.keymap {
-            --color-bg:      #2e3440;   /* Polar Night 1 — SVG surround      */
-            --color-key:     #3b4252;   /* Polar Night 2 — key surface        */
-            --color-text:    #eceff4;   /* Snow Storm 3  — main tap text      */
-            --color-ghost:   #434c5e;   /* Polar Night 3 — transparent keys   */
-            --color-dendron: #81a1c1;   /* Frost 3       — combo lines        */
-            --color-held:    #4c566a;   /* Polar Night 4 — held key           */
+            --color-bg:      #a89984;
+            --color-key:     #282828;
+            --color-text:    #ebdbb2;
+            --color-ghost:   #928374;
+            --color-dendron: #504945;
+            --color-held:    #665c54;
 
-            --color-fn:      #88c0d0;   /* Frost 2       — cyan               */
-            --color-nav:     #ebcb8b;   /* Aurora yellow                      */
-            --color-num:     #d08770;   /* Aurora orange                      */
-            --color-sys:     #a3be8c;   /* Aurora green                       */
+            --color-fn:      #458588;
+            --color-nav:     #fabd2f;
+            --color-num:     #d65d0e;
+            --color-sys:     #689d6a;
         }
-        /* In dark mode the key surface is dark, so labels need light fill */
-        text.label, text.footer { fill: var(--color-text); }
     }

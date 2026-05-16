@@ -100,7 +100,7 @@ label= "NAV";
 bindings = <
 //╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
                 &trans    &trans    &trans    &trans    &trans                         &kp PG_UP    &trans    &kp UP    &trans    &kp HOME
-    &trans      &trans    &trans    &trans    &trans    &trans                         &kp PG_DOWN    &kp LEFT    &kp DOWN    &kp RIGHT    &kp END    &trans
+    &trans      &trans    &trans    &trans    &trans    &trans                         &kp PG_DN     &kp LEFT    &kp DOWN    &kp RIGHT    &kp END    &trans
     &trans      &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                     &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
         >;
