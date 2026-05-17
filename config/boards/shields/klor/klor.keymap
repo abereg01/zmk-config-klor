@@ -8,13 +8,13 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define BASE   0
-#define SYSTEM 1
-#define RAISE  2
-#define NAV    3
-#define NUM    4
-#define SCROLL 5
-#define LEADER 6
+#define BASE     0
+#define COLEMAK  1
+#define SYSTEM   2
+#define RAISE    3
+#define NAV      4
+#define NUM      5
+#define SCROLL   6
 
 #include "combos.dtsi"
 #include "macros.dtsi"
@@ -37,14 +37,37 @@ label= "BASE";
    ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
    │    ───    │    Z    │    X    │    C    │    V    │    B    ││ ENTER  ││SCR→H   ││    N    │    M    │   ,/;   │   ./:   │   ?/!   │    ───    │
    └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
-                                   │ SYSTEM  │SPC/RAISE│  ───    │   ───   ││   ───   │  ENTER  │SPC/RAISE│NAV/NUM  │
+                                   │SYS(tog) │SPC/RAISE│ CMKDH  │   ───   ││   ───   │  ENTER  │SPC/RAISE│NAV/NUM  │
                                    └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘  */
 bindings = <
 //╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
                 &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp U     &kp I     &kp O     &kp P
     &trans      &td_a     &hm LALT S  &hm LSHFT D  &hm LCTRL F  &kp G                  &kp H     &hm RGUI J  &hm RSHFT K  &hm RALT L  &hm RCTRL SEMI  &trans
     &trans      &kp Z     &kp X     &kp C     &kp V     &kp B     &kp RET    &mo SCROLL  &kp N     &kp M     &mm_comma &mm_dot   &mm_qmark &trans
-                                    &mo SYSTEM &lt RAISE SPACE &trans &trans &trans    &kp RET   &lt RAISE SPACE  &td_nav_num
+                                    &mo_tog SYSTEM SYSTEM  &lt RAISE SPACE  &td_colemak  &trans  &trans  &kp RET  &lt RAISE SPACE  &td_nav_num
+        >;
+        sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+        };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        colemak_layer {
+label= "COLEMAK";
+/*             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+               │    Q    │    W    │    F    │    P    │    B    │                    │    J    │    L    │    U    │    Y    │    ;    │
+   ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
+   │    ───    │ A/GUI/Å │  R/ALT  │ S/SHFT  │  T/CTRL │    G    │                    │    M    │  N/GUI  │ E/SHFT  │  I/ALT  │  O/CTRL │    ───    │
+   ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
+   │    ───    │    Z    │    X    │    C    │    D    │    V    ││ ENTER  ││SCR→H   ││    K    │    H    │   ,/;   │   ./:   │   ?/!   │    ───    │
+   └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
+                                   │  (SYS)  │(RAISE)  │ CMKDH  │   ───   ││   ───   │ (ENTER) │(RAISE)  │(NAV/NUM)│
+                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘  */
+bindings = <
+//╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
+                &kp Q     &kp W     &kp F     &kp P     &kp B                          &kp J     &kp L     &kp U     &kp Y     &kp SEMI
+    &trans      &td_a     &hm LALT R  &hm LSHFT S  &hm LCTRL T  &kp G                  &kp M     &hm RGUI N  &hm RSHFT E  &hm RALT I  &hm RCTRL O  &trans
+    &trans      &kp Z     &kp X     &kp C     &kp D     &kp V     &trans     &trans    &kp K     &kp H     &mm_comma &mm_dot   &mm_qmark &trans
+                                    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
         >;
         sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
@@ -58,14 +81,14 @@ label= "SYSTEM";
    ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
    │           │         │         │         │         │         │                    │         │W+C+←    │         │W+C+→    │         │           │
    ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
-   │           │         │         │         │         │         ││        ││        ││         │         │         │         │  SIAI   │           │
+   │           │         │         │         │         │         ││        ││        ││         │         │ C_PREV  │  C_PP   │ C_NEXT  │           │
    └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
                                    │         │         │         │         ││         │         │         │         │                                  */
 bindings = <
 //╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
                 &trans    &trans    &trans    &trans     &trans                         &trans    &trans   &trans     &trans    &trans
     &trans      &trans    &trans    &trans    &trans     &trans               &trans    &trans    &kp LG(LC(LEFT)) &trans     &kp LG(LC(RIGHT)) &trans
-    &trans      &trans    &trans    &trans    &trans     &trans    &trans     &trans    &trans    &trans   &trans     &trans    &macro_siai &trans
+    &trans      &trans    &trans    &trans    &trans     &trans    &trans     &trans    &trans    &trans   &kp C_PREV  &kp C_PP  &kp C_NEXT  &trans
                                     &trans    &trans     &trans    &trans     &trans    &trans    &trans   &trans
         >;
         sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
@@ -133,28 +156,6 @@ bindings = <
                                     &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
         >;
         sensor-bindings = <&inc_dec_kp UP DOWN &scrl_h>;
-        };
-
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        leader_layer {
-label= "LEADER";
-/*             ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-               │         │ CTRL+W  │         │         │         │                    │         │         │         │         │         │
-   ┌───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┐
-   │           │         │         │         │         │         │                    │         │         │         │         │         │           │
-   ├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼───────────┤
-   │           │         │         │         │         │         ││        ││        ││         │         │         │         │         │           │
-   └───────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴───────────┘
-                                   │         │         │         │         ││         │         │         │         │                                  */
-bindings = <
-//╷           ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷           ╷
-                &trans    &kp LC(W) &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
-    &trans      &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans    &trans
-    &trans      &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans
-        >;
-        sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
     };

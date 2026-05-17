@@ -18,7 +18,7 @@
  *
  * Layer policy:
  *   - ESC, BSPC, DEL combos are active on ALL layers (no layers restriction).
- *   - All other combos are BASE layer only (layers = <BASE>).
+ *   - All other combos are BASE + COLEMAK (layers = <BASE COLEMAK>).
  */
 
 / {
@@ -40,7 +40,7 @@
             key-positions = <12 13>;
             bindings = <&kp TAB>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // R + T  →  Delete  [all layers]
@@ -81,7 +81,7 @@
             key-positions = <14 17>;
             bindings = <&caps_word>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Clipboard ──────────────────────────────────────────────────────────
@@ -91,7 +91,7 @@
             key-positions = <24 25>;
             bindings = <&kp LC(C)>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // C + V  →  Paste  [BASE only]
@@ -100,7 +100,7 @@
             key-positions = <25 26>;
             bindings = <&kp LC(V)>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // X + V  →  Cut  [BASE only]
@@ -109,7 +109,7 @@
             key-positions = <24 26>;
             bindings = <&kp LC(X)>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Symbols: left side vertical (top → home) ───────────────────────────
@@ -119,7 +119,7 @@
             key-positions = <4 15>;
             bindings = <&kp DLLR>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // E + D  →  #  [BASE only]
@@ -128,7 +128,7 @@
             key-positions = <2 13>;
             bindings = <&kp HASH>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // W + S  →  @  [BASE only]
@@ -137,7 +137,7 @@
             key-positions = <1 12>;
             bindings = <&kp AT>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Symbols: left side vertical (home → bottom) ───────────────────────
@@ -147,7 +147,7 @@
             key-positions = <13 25>;
             bindings = <&kp BSLH>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // F + V  →  =  [BASE only]
@@ -156,7 +156,7 @@
             key-positions = <14 26>;
             bindings = <&kp EQUAL>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // G + B  →  ~  [BASE only]
@@ -165,7 +165,7 @@
             key-positions = <15 27>;
             bindings = <&kp TILDE>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // S + X  →  ' (tap) / ` (double-tap)  [BASE only]
@@ -174,7 +174,7 @@
             key-positions = <12 24>;
             bindings = <&td_apos_grave>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Symbols: right side vertical (top → home) ─────────────────────────
@@ -184,7 +184,7 @@
             key-positions = <5 16>;
             bindings = <&kp CARET>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // U + J  →  +  [BASE only]
@@ -193,7 +193,7 @@
             key-positions = <6 17>;
             bindings = <&kp PLUS>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // I + K  →  *  [BASE only]
@@ -202,7 +202,7 @@
             key-positions = <7 18>;
             bindings = <&kp STAR>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // E + R  →  &  [BASE only]
@@ -211,7 +211,7 @@
             key-positions = <2 3>;
             bindings = <&kp AMPS>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Symbols: right side vertical (home → bottom) ──────────────────────
@@ -221,7 +221,7 @@
             key-positions = <16 30>;
             bindings = <&kp UNDER>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // J + M  →  -  [BASE only]
@@ -230,7 +230,7 @@
             key-positions = <17 31>;
             bindings = <&kp MINUS>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // K + ,  →  /  [BASE only]
@@ -239,7 +239,7 @@
             key-positions = <18 32>;
             bindings = <&kp FSLH>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // L + .  →  |  [BASE only]
@@ -248,7 +248,7 @@
             key-positions = <19 33>;
             bindings = <&kp PIPE>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Brackets / parens: right side horizontal ───────────────────────────
@@ -258,7 +258,7 @@
             key-positions = <6 7>;
             bindings = <&kp LPAR>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // I + O  →  )   [BASE only, top row]
@@ -267,7 +267,7 @@
             key-positions = <7 8>;
             bindings = <&kp RPAR>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // J + K  →  {   [BASE only, home row]
@@ -276,7 +276,7 @@
             key-positions = <17 18>;
             bindings = <&kp LBRC>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // K + L  →  }   [BASE only, home row]
@@ -285,7 +285,7 @@
             key-positions = <18 19>;
             bindings = <&kp RBRC>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // M + ,  →  [   [BASE only, bottom row]
@@ -294,7 +294,7 @@
             key-positions = <31 32>;
             bindings = <&kp LBKT>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // , + .  →  ]   [BASE only, bottom row]
@@ -303,7 +303,7 @@
             key-positions = <32 33>;
             bindings = <&kp RBKT>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── Special characters ─────────────────────────────────────────────────
@@ -313,17 +313,7 @@
             key-positions = <11 12>;
             bindings = <&kp RA(A)>;
             require-prior-idle-ms = <100>;
-            layers = <BASE>;
-        };
-
-        // ── Leader key ─────────────────────────────────────────────────────────
-        // S + D + F  →  Leader (sticky layer — next key comes from LEADER layer)  [BASE only]
-        combo_leader {
-            timeout-ms = <50>;
-            key-positions = <12 13 14>;
-            bindings = <&sl LEADER>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE>;
+            layers = <BASE COLEMAK>;
         };
 
         // ── System layer combos ────────────────────────────────────────────────

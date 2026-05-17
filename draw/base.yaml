@@ -2,14 +2,13 @@
 # Style: urob/zmk-config — two-layer SVG (Base + Combos) with color-coded corner legends
 #
 # Corner legend conventions:
-#   tl (teal, FN)   ← NUM layer F-keys
-#   tr (yellow,NAV) ← NAV layer bindings
-#   bl (orange,NUM) ← NUM layer digits / numpad
-#   br (green, SYS) ← RAISE layer bindings
+#   tl (blue, FN/SYS) ← FN layer F-keys + SYSTEM layer bindings (keys without F-key share tl)
+#   tr (yellow, NAV)  ← NAV layer bindings
+#   bl (orange, NUM)  ← NUM layer digits / numpad
+#   br (green, SYS)   ← RAISE layer bindings
 #
-# Layers folded in: BASE, NAV, NUM, RAISE.
+# Layers folded in: BASE, NAV, NUM, RAISE, SYSTEM.
 # Dropped:
-#   SYSTEM  — accessed via left-outer thumb hold; PDesk/NDesk/SIAI not folded into base legends.
 #   SCROLL  — encoder-only modifier; surfaced via the hold legend on saeg pos 26 + footer note.
 #   LEADER  — sticky-layer-only; entered via combo S+D+F (shown on the Combos page).
 #
@@ -23,10 +22,9 @@ layout:
   layout_name: LAYOUT_saegewerk
 
 # Encoders are not modeled by the KLOR physical layout in keymap-drawer (no sensor
-# positions defined), so the SCROLL layer surfaces as a hold legend on pos 26 only:
-#   Left encoder:  rotate = ↑ / ↓
-#   Right encoder: rotate = PgUp / PgDn  (vertical scroll)
-#                  hold &mo SCROLL on pos 26 → rotate becomes ← / → (horizontal scroll)
+# positions defined), so both are surfaced as tap/hold legends on their closest key pos:
+#   Left encoder  (pos 25): tap = ↑/↓ (rotate),  hold = Enter (press)
+#   Right encoder (pos 26): tap = ↑/↓ (rotate),  hold = ←/→  (hold &mo SCROLL → horizontal)
 #
 # Note: a `draw_config.footer_text` override would normally carry this note, but
 # keymap-drawer's YAML-level draw_config merge drops the custom `svg_style` from
@@ -48,36 +46,80 @@ layers:
     - {t: O,                            bl: "9"}                       # 8
     - {t: P,              tr: Home}                                    # 9
     # ───── Home row (positions 10–19) ────────────────────────────────────────
-    - {t: A,  h: Gui,                              br: BTclr}          # 10 — &td_a (tap=A/hold=Gui, double-tap=Å)
-    - {t: S,  h: Alt,     bl: F5}                                      # 11 — &hm LALT S
-    - {t: D,  h: Shift,   bl: F6}                                      # 12 — &hm LSHFT D
-    - {t: F,  h: Ctrl,    bl: F7}                                      # 13 — &hm LCTRL F
+    - {t: A,  h: "$$mdi:microsoft-windows$$",                          br: BTclr}  # 10 — &td_a (tap=A/hold=Gui, double-tap=Å)
+    - {t: S,  h: "$$mdi:apple-keyboard-option$$",    bl: F5}           # 11 — &hm LALT S
+    - {t: D,  h: "$$mdi:apple-keyboard-shift$$",     bl: F6}           # 12 — &hm LSHFT D
+    - {t: F,  h: "$$mdi:apple-keyboard-control$$",   bl: F7}           # 13 — &hm LCTRL F
     - {t: G,              bl: F8}                                      # 14
     - {t: H,              tr: PgDn,                br: Bspc}           # 15
-    - {t: J,  h: Gui,     tr: "←",      bl: "4"}                       # 16 — &hm RGUI J
-    - {t: K,  h: Shift,   tr: "↓",      bl: "5"}                       # 17 — &hm RSHFT K
-    - {t: L,  h: Alt,     tr: "→",      bl: "6"}                       # 18 — &hm RALT L
-    - {t: ";", h: Ctrl,   tr: End,                 br: Ö}              # 19 — &hm RCTRL SEMI
+    - {t: J,  h: "$$mdi:microsoft-windows$$",   tl: PDesk, tr: "←", bl: "4"}  # 16 — &hm RGUI J
+    - {t: K,  h: "$$mdi:apple-keyboard-shift$$",               tr: "↓", bl: "5"}  # 17 — &hm RSHFT K
+    - {t: L,  h: "$$mdi:apple-keyboard-option$$",  tl: NDesk, tr: "→", bl: "6"}  # 18 — &hm RALT L
+    - {t: ";", h: "$$mdi:apple-keyboard-control$$", tr: End,            br: Ö}    # 19 — &hm RCTRL SEMI
     # ───── Bottom row + 2 middle thumbs (positions 20–31) ────────────────────
     - {t: Z}                                                           # 20
     - {t: X,              bl: F1}                                      # 21
     - {t: C,              bl: F2}                                      # 22
     - {t: V,              bl: F3}                                      # 23
     - {t: B,              bl: F4}                                      # 24
-    - {t: Enter}                                                       # 25 — inner thumb (left of split)
-    - {t: "─", h: "Scrl↔"}                                             # 26 — &mo SCROLL: hold flips right enc to horiz
+    - {t: "↑/↓", h: Enter}                                              # 25 — left enc: rotate=↑/↓, press=Enter
+    - {t: "↑/↓", h: "←/→"}                                             # 26 — &mo SCROLL: rotate=↑/↓, hold→rotate=←/→
     - {t: N}                                                           # 27
     - {t: M,                            bl: "1"}                       # 28
-    - {t: ",",                          bl: "2"}                       # 29 — &mm_comma (shifted: ;)
-    - {t: ".",                          bl: "3"}                       # 30 — &mm_dot   (shifted: :)
-    - {t: "?"}                                                         # 31 — &mm_qmark (shifted: !)
+    - {t: ",",  tl: "$$mdi:skip-backward$$", bl: "2"}                   # 29 — &mm_comma; SYSTEM: C_PREV
+    - {t: ".",  tl: "$$mdi:play-pause$$",    bl: "3"}                   # 30 — &mm_dot;   SYSTEM: C_PP
+    - {t: "?",  tl: "$$mdi:skip-forward$$"}                             # 31 — &mm_qmark; SYSTEM: C_NEXT
     # ───── Thumb row (positions 32–37) ───────────────────────────────────────
-    - {t: "─", h: SYS}                                                 # 32 — &mo SYSTEM
-    - {t: Spc, h: RAISE}                                               # 33 — &lt RAISE SPACE
-    - {type: trans}                                                    # 34
-    - {t: Enter}                                                       # 35
-    - {t: Spc, h: RAISE}                                               # 36 — &lt RAISE SPACE
-    - {t: NAV, h: "NUM",          bl: "0"}                       # 37 — &td_nav_num
+    - {t: SYS}                                                          # 32 — &mo_tog: tap=tog SYSTEM, hold=mo SYSTEM
+    - {t: Spc, h: RAISE}                                                # 33 — &lt RAISE SPACE
+    - {t: "CMK DH"}                                                     # 34 — &td_colemak: double-tap to toggle Colemak DH
+    - {t: Enter}                                                        # 35
+    - {t: Spc, h: RAISE}                                                # 36 — &lt RAISE SPACE
+    - {t: NAV, h: "NUM",          bl: "0"}                              # 37 — &td_nav_num
+
+  Colemak DH:
+    # ───── Top row (positions 0–9) ───────────────────────────────────────────
+    - {t: Q}                                                             # 0
+    - {t: W}                                                             # 1
+    - {t: F}                                                             # 2
+    - {t: P}                                                             # 3
+    - {t: B}                                                             # 4
+    - {t: J}                                                             # 5
+    - {t: L}                                                             # 6
+    - {t: U}                                                             # 7
+    - {t: Y}                                                             # 8
+    - {t: ";"}                                                           # 9
+    # ───── Home row (positions 10–19) ────────────────────────────────────────
+    - {t: A,  h: "$$mdi:microsoft-windows$$"}                           # 10 — &td_a (Å on double-tap)
+    - {t: R,  h: "$$mdi:apple-keyboard-option$$"}                       # 11
+    - {t: S,  h: "$$mdi:apple-keyboard-shift$$"}                        # 12
+    - {t: T,  h: "$$mdi:apple-keyboard-control$$"}                      # 13
+    - {t: G}                                                             # 14
+    - {t: M}                                                             # 15
+    - {t: N,  h: "$$mdi:microsoft-windows$$"}                           # 16
+    - {t: E,  h: "$$mdi:apple-keyboard-shift$$"}                        # 17
+    - {t: I,  h: "$$mdi:apple-keyboard-option$$"}                       # 18
+    - {t: O,  h: "$$mdi:apple-keyboard-control$$"}                      # 19
+    # ───── Bottom row + 2 middle thumbs (positions 20–31) ────────────────────
+    - {t: Z}                                                             # 20
+    - {t: X}                                                             # 21
+    - {t: C}                                                             # 22
+    - {t: D}                                                             # 23
+    - {t: V}                                                             # 24
+    - {t: "↑/↓", h: Enter}                                              # 25 — left enc (same as BASE)
+    - {t: "↑/↓", h: "←/→"}                                              # 26 — right enc (same as BASE)
+    - {t: K}                                                             # 27
+    - {t: H}                                                             # 28
+    - {t: ","}                                                           # 29
+    - {t: "."}                                                           # 30
+    - {t: "?"}                                                           # 31
+    # ───── Thumb row (positions 32–37) ───────────────────────────────────────
+    - {t: SYS}                                                           # 32
+    - {t: Spc, h: RAISE}                                                 # 33
+    - {t: "CMK DH"}                                                      # 34 — double-tap to exit Colemak
+    - {t: Enter}                                                         # 35
+    - {t: Spc, h: RAISE}                                                 # 36
+    - {t: NAV, h: "NUM", bl: "0"}                                        # 37
 
   Combos:
     # Clean background for the combo diagram — every key rendered as transparent.
@@ -162,5 +204,6 @@ combos:
   - {p: [29, 30],   k: "]",    l: [Combos]}
   # ── Special characters ──────────────────────────────────────────────────────
   - {p: [10, 11],   k: "Å",    l: [Combos]}
-  # ── Leader (sticky LEADER layer; LEADER currently has just C-W on W=pos 1) ──
-  - {p: [11, 12, 13], k: Lead, l: [Combos], align: top, offset: 1.35}
+  # ── System-layer combos (fn-tinted background) ───────────────────────────────
+#  - {p: [11, 12],   k: {t: "Alt+Tab",  type: "fn"}, l: [Combos]}
+#  - {p: [21, 22],   k: {t: "⇧Alt+Tab", type: "fn"}, l: [Combos]}

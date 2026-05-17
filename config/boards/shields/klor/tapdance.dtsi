@@ -25,5 +25,13 @@
             bindings = <&mo NAV>, <&num_word NUM>;
         };
 
+        td_colemak: tap_dance_colemak {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COLEMAK";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&trans>, <&tog COLEMAK>;  // single-tap = pass-through; double-tap = toggle Colemak DH
+        };
+
     };
 };

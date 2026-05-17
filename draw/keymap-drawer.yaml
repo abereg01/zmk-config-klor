@@ -28,7 +28,6 @@ parse_config:
 
     "&kp LA(TAB)": Alt+Tab
     "&kp LA(LS(TAB))": "⇧Alt+Tab"
-    "&macro_siai": SIAI
 
     "&swapper": NWin
     "&kp LS(TAB)": PWin
@@ -38,12 +37,11 @@ parse_config:
     "&smart_mouse": Smart Mouse
 
     "&hml LS(LALT)TAB": Tab
-    "&hm_combo_ldr": Leader
-    "&hm_combo_ldrsh": Shift+Leader
-    "&hm_combo_lpar": { "t": "< (" }
-    "&hm_combo_rpar": { "t": "> )"}
     "&kp LBKT": { "t": "{ ["}
     "&kp RBKT": { "t": "} ]"}
+
+    "&td_colemak": { "t": "CMK DH" }
+    "&mo_tog SYSTEM SYSTEM": SYS
 
     "&mmv MOVE_UP": Mouse ↑
     "&mmv MOVE_DOWN": Mouse ↓
@@ -65,7 +63,6 @@ parse_config:
 
   zmk_combos:
     combo_cut: { align: bottom, o: 0.15 }
-    combo_ldrsh: { align: top, o: 1.35 }
 
     combo_lt: { hidden: true }
     combo_gt: { hidden: true }
@@ -243,7 +240,9 @@ draw_config:
 
     rect.key, rect.combo, rect.combo-separate { fill: var(--color-key); stroke-width: 0; }
     rect.held, rect.combo.held                { fill: var(--color-held); }
+    rect.combo.fn                             { fill: var(--color-fn); }
     .layer-Combos rect.key                    { fill: var(--color-ghost); }
+    .fn text.combo                            { fill: var(--color-key); }
 
     path.combo { stroke: var(--color-dendron); stroke-width: 2; stroke-dasharray: 2, 3; opacity: 0.45; fill: none; }
 
@@ -255,8 +254,9 @@ draw_config:
 
     /* Per-key tints (saegewerk 0..37 index space — see draw/base.yaml).
        Tint the rect so the whole key glows in the accent color. */
-    .keypos-32 rect.key { fill: var(--color-fn); }    /* mo SYSTEM        thumb (left)         — orange */
+    .keypos-32 rect.key { fill: var(--color-fn); }    /* mo_tog SYSTEM    thumb (left)         — blue   */
     .keypos-33 rect.key { fill: var(--color-sys); }    /* lt RAISE SPACE   thumb (left)         — green  */
+    .keypos-34 rect.key { fill: var(--color-nm); }     /* td_colemak       thumb (center)       — purple */
     .keypos-36 rect.key { fill: var(--color-sys); }    /* lt RAISE SPACE   thumb (right)        — green  */
     .keypos-37 rect.key { fill: var(--color-nav); }    /* td_nav_num       thumb (rightmost)    — yellow */
 
@@ -264,6 +264,7 @@ draw_config:
        Same-specificity rules below re-apply the per-corner accents for pos 37. */
     .keypos-32 text,
     .keypos-33 text,
+    .keypos-34 text,
     .keypos-36 text,
     .keypos-37 text      { fill: var(--color-key); }   /* dark slate on the tinted keys */
     .keypos-37 text.hold { fill: var(--color-nm); }    /* td_nav_num: NUM rendered in purple */

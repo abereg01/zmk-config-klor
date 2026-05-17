@@ -1,1 +1,22 @@
-keymap -c /Volumes/Portable/keyboard/zmk-config-klor/draw/keymap-drawer.yaml draw /Volumes/Portable/keyboard/zmk-config-klor/draw/base.yaml -o /Volumes/Portable/keyboard/zmk-config-klor/draw/base.svg
+#!/usr/bin/env bash
+# Generate the hand-curated keymap SVG, then export a high-res PNG for wallpaper use.
+#
+# Usage:  bash draw/drawcmd
+# Deps:   keymap-drawer  (pip install keymap-drawer)
+#         cairosvg       (pip install cairosvg)
+
+set -e
+
+DRAW_DIR="$(cd "$(dirname "$0")" && pwd)"
+CFG="$DRAW_DIR/keymap-drawer.yaml"
+SRC="$DRAW_DIR/base.yaml"
+SVG="$DRAW_DIR/base.svg"
+PNG="$DRAW_DIR/base.png"
+
+echo "→ Generating SVG…"
+keymap -c "$CFG" draw "$SRC" -o "$SVG"
+echo "  Saved: $SVG"
+
+echo "→ Exporting PNG (4× scale)…"
+python3 "$DRAW_DIR/svg2png.py" "$SVG" "$PNG" 4
+echo "  Saved: $PNG"
