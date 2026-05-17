@@ -272,20 +272,3 @@ draw_config:
 
     .icon-tabler > path                             { fill: inherit; stroke: inherit; stroke-width: 2; }
     .icon-tabler > path[stroke="none"][fill="none"] { visibility: hidden; }
-
-    @media (prefers-color-scheme: dark) {
-        svg.keymap {
-            --color-bg:      #a89984;
-            --color-key:     #282828;
-            --color-text:    #ebdbb2;
-            --color-ghost:   #928374;
-            --color-dendron: #504945;
-            --color-held:    #665c54;
-
-            --color-fn:      #458588;
-            --color-nav:     #fabd2f;
-            --color-num:     #d65d0e;
-            --color-sys:     #689d6a;
-            --color-nm:      #b48ead;
-        }
-    }
