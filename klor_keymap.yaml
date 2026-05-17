@@ -12,7 +12,7 @@ layers:
   - O
   - P
   - {type: trans}
-  - {t: A, h: GUI/Ä}
+  - '&td_a'
   - {t: S, h: Alt}
   - {t: D, h: Shift}
   - {t: F, h: Ctrl}
@@ -44,7 +44,7 @@ layers:
   - {type: trans}
   - Enter
   - {t: Spc, h: RAISE}
-  - {t: NAV, h: NUM ⇕}
+  - '&td_nav_num'
   SYSTEM:
   - {type: trans}
   - {type: trans}
@@ -80,7 +80,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - SIAI
+  - '&macro_siai'
   - {type: trans}
   - {type: held}
   - {type: trans}
@@ -152,7 +152,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - PG DOWN
+  - PgDn
   - ←
   - ↓
   - →
@@ -272,7 +272,7 @@ layers:
   - {type: trans}
   LEADER:
   - {type: trans}
-  - ClsTab
+  - Ctl+W
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -333,10 +333,10 @@ combos:
   k: Caps Word
   l: [BASE]
 - p: [24, 25]
-  k: Copy
+  k: Ctl+C
   l: [BASE]
 - p: [25, 26]
-  k: Paste
+  k: Ctl+V
   l: [BASE]
 - p: [24, 26]
   k: Cut
@@ -365,7 +365,7 @@ combos:
   k: '~'
   l: [BASE]
 - p: [12, 24]
-  k: {t: '''', h: '`'}
+  k: '&td_apos_grave'
   l: [BASE]
 - p: [5, 16]
   k: ^
@@ -394,19 +394,15 @@ combos:
 - p: [6, 7]
   k: (
   l: [BASE]
-  hidden: true
 - p: [7, 8]
   k: )
   l: [BASE]
-  hidden: true
 - p: [17, 18]
   k: '{'
   l: [BASE]
-  hidden: true
 - p: [18, 19]
   k: '}'
   l: [BASE]
-  hidden: true
 - p: [31, 32]
   k: '{ ['
   l: [BASE]

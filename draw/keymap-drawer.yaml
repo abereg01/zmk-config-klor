@@ -1,187 +1,181 @@
 parse_config:
   zmk_additional_includes:
-    - ../config/boards/shields/klor
+    - "modules/zmk/helpers/include"
+
+  zmk_preamble: |
+    #include <zmk-helpers/key-labels/34.h>
+    #define CONFIG_WIRELESS
 
   raw_binding_map:
-    # KLOR-specific tap-dance / macros
-    "&td_a":          {t: A, h: GUI/Ä}
-    "&td_nav_num":    {t: NAV, h: "NUM ⇕"}
-    "&td_apos_grave": {t: "'", h: "`"}
-    "&macro_siai":    SIAI
-
-    # System / BT
-    "&sys_reset":   Reset
-    "&bootloader":  Boot
-    "&caps_word":   Caps Word
-    "&kp LA(F4)":   Close
+    "&sys_reset": Reset
+    "&bootloader": Boot
+    "&caps_word": Caps Word
+    "&kp LA(F4)": Close
 
     "&bt BT_SEL 0": BT 1
     "&bt BT_SEL 1": BT 2
     "&bt BT_SEL 2": BT 3
     "&bt BT_SEL 3": BT 4
 
-    # Clipboard
-    "&kp LC(C)":   Copy
     "&kp LC(INS)": Copy
-    "&kp LC(X)":   Cut
-    "&kp LC(V)":   Paste
+    "&kp LC(X)": Cut
     "&kp LS(INS)": Paste
-    "&kp LC(Z)":   Undo
-    "&kp LC(W)":   ClsTab
 
-    # Window / desktop management
-    "&kp LG(LC(LEFT))":  PDesk
+    "&kp LG(LC(LEFT))": PDesk
     "&kp LG(LC(RIGHT))": NDesk
     "&kp LG(LC(LS(A)))": PinA.
     "&kp LG(LC(LS(Q)))": PinW.
-    "&swapper":           NWin
-    "&kp LS(TAB)":        PWin
 
-    # Special behaviours
-    "&dot_spc":     Sentence
-    "&num_dance":   {t: Smart}
-    "&magic_shift": {t: Magic, h: Shift}
+    "&swapper": NWin
+    "&kp LS(TAB)": PWin
+    "&dot_spc": Sentence
+    "&num_dance": { "t": "Smart"}
+    "&magic_shift": { "t": Magic, "h": "Shift" }
     "&smart_mouse": Smart Mouse
 
-    # Hold-mod combos
     "&hml LS(LALT)TAB": Tab
-    "&hm_combo_ldr":    Leader
-    "&hm_combo_ldrsh":  Shift+Leader
-    "&hm_combo_lpar":   {t: "< ("}
-    "&hm_combo_rpar":   {t: "> )"}
-    "&kp LBKT":         {t: "{ ["}
-    "&kp RBKT":         {t: "} ]"}
+    "&hm_combo_ldr": Leader
+    "&hm_combo_ldrsh": Shift+Leader
+    "&hm_combo_lpar": { "t": "< (" }
+    "&hm_combo_rpar": { "t": "> )"}
+    "&kp LBKT": { "t": "{ ["}
+    "&kp RBKT": { "t": "} ]"}
 
-    # Mouse / scroll
-    "&mmv MOVE_UP":    Mouse ↑
-    "&mmv MOVE_DOWN":  Mouse ↓
-    "&mmv MOVE_LEFT":  Mouse ←
+    "&mmv MOVE_UP": Mouse ↑
+    "&mmv MOVE_DOWN": Mouse ↓
+    "&mmv MOVE_LEFT": Mouse ←
     "&mmv MOVE_RIGHT": Mouse →
-    "&msc SCRL_UP":    Scroll ↑
-    "&msc SCRL_DOWN":  Scroll ↓
-    "&msc SCRL_LEFT":  Scroll ←
+
+    "&msc SCRL_UP": Scroll ↑
+    "&msc SCRL_DOWN": Scroll ↓
+    "&msc SCRL_LEFT": Scroll ←
     "&msc SCRL_RIGHT": Scroll →
+
     "&mkp LCLK": Left Click
     "&mkp RCLK": Right Click
     "&mkp MCLK": Middle Click
-    "&mkp MB4":  Back Click
-    "&mkp MB5":  Forward Click
+    "&mkp MB4": Back Click
+    "&mkp MB5": Forward Click
 
-  trans_legend: {t: "", type: trans}
+  trans_legend: { "t": "", "type": "trans" }
 
   zmk_combos:
-    combo_cut:       {align: bottom, o: 0.15}
-    combo_lpar_top:  {hidden: true}
-    combo_rpar_top:  {hidden: true}
-    combo_lbrc_home: {hidden: true}
-    combo_rbrc_home: {hidden: true}
+    combo_cut: { align: bottom, o: 0.15 }
+    combo_ldrsh: { align: top, o: 1.35 }
+
+    combo_lt: { hidden: true }
+    combo_gt: { hidden: true }
+    combo_lbrc: { hidden: true }
+    combo_rbrc: { hidden: true }
 
   zmk_keycode_map:
-    LALT:  Alt
-    RALT:  Alt
+    # custom mappings
+    LALT: Alt
+    RALT: Alt
     LCTRL: Ctrl
     RCTRL: Ctrl
-    LGUI:  Gui
-    RGUI:  Gui
+    LGUI: Gui
+    RGUI: Gui
     LSHFT: Shift
     RSHFT: Shift
 
-    BSPC:  Bspc
-    DEL:   Del
-    ESC:   Esc
-    RET:   Enter
+    BSPC: Bspc
+    DEL: Del
+    ESC: Esc
+    RET: Enter
     SPACE: Spc
-    TAB:   Tab
+    TAB: Tab
 
     PG_UP: PgUp
     PG_DN: PgDn
-    INS:   Ins
-    HOME:  Home
-    END:   End
+    INS: Ins
+    HOME: Home
+    END: End
 
-    UP:    ↑
-    DOWN:  ↓
-    LEFT:  ←
+    UP: ↑
+    DOWN: ↓
+    LEFT: ←
     RIGHT: →
 
     K_CANCEL: Cancel
 
-    C_MUTE:   $$mdi:volume-off$$
-    C_PP:     $$mdi:play-pause$$
+    C_MUTE: $$mdi:volume-off$$
+    C_PP: $$mdi:play-pause$$
     C_VOL_UP: $$mdi:volume-high$$
     C_VOL_DN: $$mdi:volume-medium$$
-    C_NEXT:   $$mdi:skip-forward$$
-    C_PREV:   $$mdi:skip-backward$$
+    C_NEXT: $$mdi:skip-forward$$
+    C_PREV: $$mdi:skip-backward$$
 
-    AMPERSAND:         "&"
-    AMPS:              "&"
-    APOS:              "'"
-    APOSTROPHE:        "'"
-    ASTERISK:          "*"
-    ASTRK:             "*"
-    AT:                "@"
-    AT_SIGN:           "@"
-    BACKSLASH:         \
-    BSLH:              \
-    CARET:             ^
-    COLON:             ":"
-    COMMA:             ","
-    DLLR:              $
-    DOLLAR:            $
-    DOT:               .
-    DOUBLE_QUOTES:     '"'
-    DQT:               '"'
-    EQUAL:             "="
-    EXCL:              "!"
-    EXCLAMATION:       "!"
-    FSLH:              /
-    GRAVE:             "`"
-    GREATER_THAN:      ">"
-    GT:                ">"
-    HASH:              "#"
-    LBKT:              "["
-    LBRC:              "{"
-    LEFT_BRACE:        "{"
-    LEFT_BRACKET:      "["
-    LEFT_PARENTHESIS:  (
-    LESS_THAN:         <
-    LPAR:              (
-    LT:                <
-    MINUS:             "-"
-    NON_US_BACKSLASH:  \
-    NON_US_BSLH:       "|"
-    NON_US_HASH:       "#"
-    NUHS:              "#"
-    PERCENT:           "%"
-    PERIOD:            .
-    PIPE:              "|"
-    PIPE2:             "|"
-    PLUS:              +
-    POUND:             "#"
-    PRCNT:             "%"
-    QMARK:             "?"
-    QUESTION:          "?"
-    RBKT:              "]"
-    RBRC:              "}"
-    RIGHT_BRACE:       "}"
-    RIGHT_BRACKET:     "]"
+    # defaults
+    AMPERSAND: "&"
+    AMPS: "&"
+    APOS: "'"
+    APOSTROPHE: "'"
+    ASTERISK: "*"
+    ASTRK: "*"
+    AT: "@"
+    AT_SIGN: "@"
+    BACKSLASH: \
+    BSLH: \
+    CARET: ^
+    COLON: ":"
+    COMMA: ","
+    DLLR: $
+    DOLLAR: $
+    DOT: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    EQUAL: "="
+    EXCL: "!"
+    EXCLAMATION: "!"
+    FSLH: /
+    GRAVE: "`"
+    GREATER_THAN: ">"
+    GT: ">"
+    HASH: "#"
+    LBKT: "["
+    LBRC: "{"
+    LEFT_BRACE: "{"
+    LEFT_BRACKET: "["
+    LEFT_PARENTHESIS: (
+    LESS_THAN: <
+    LPAR: (
+    LT: <
+    MINUS: "-"
+    NON_US_BACKSLASH: \
+    NON_US_BSLH: "|"
+    NON_US_HASH: "#"
+    NUHS: "#"
+    PERCENT: "%"
+    PERIOD: .
+    PIPE: "|"
+    PIPE2: "|"
+    PLUS: +
+    POUND: "#"
+    PRCNT: "%"
+    QMARK: "?"
+    QUESTION: "?"
+    RBKT: "]"
+    RBRC: "}"
+    RIGHT_BRACE: "}"
+    RIGHT_BRACKET: "]"
     RIGHT_PARENTHESIS: )
-    RPAR:              )
-    SEMI:              ;
-    SEMICOLON:         ;
-    SINGLE_QUOTE:      "'"
-    SLASH:             /
-    SQT:               "'"
-    STAR:              "*"
-    TILDE:             "~"
-    TILDE2:            "~"
-    UNDER:             _
-    UNDERSCORE:        _
+    RPAR: )
+    SEMI: ;
+    SEMICOLON: ;
+    SINGLE_QUOTE: "'"
+    SLASH: /
+    SQT: "'"
+    STAR: "*"
+    TILDE: "~"
+    TILDE2: "~"
+    UNDER: _
+    UNDERSCORE: _
 
 draw_config:
   append_colon_to_layer_header: false
   dark_mode: false
-  footer_text: "KLOR — ZMK keymap"
+  footer_text: "urob/zmk-config"
   glyph_tap_size: 15
   glyph_hold_size: 12
   glyph_shifted_size: 10

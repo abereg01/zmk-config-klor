@@ -84,7 +84,7 @@ text.br, use.br { fill: var(--color-sys); }
         --color-num:     #d65d0e;
         --color-sys:     #689d6a;
     }
-}</style>
+</style>
 <g transform="translate(10, 0)" class="layer-BASE">
 <text x="0" y="5" class="label" id="BASE">BASE</text>
 <g transform="translate(0, 10)">

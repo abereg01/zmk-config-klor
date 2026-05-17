@@ -1,0 +1,1 @@
+keymap -c /Volumes/Portable/keyboard/zmk-config-klor/draw/keymap-drawer.yaml draw /Volumes/Portable/keyboard/zmk-config-klor/draw/base.yaml -o /Volumes/Portable/keyboard/zmk-config-klor/draw/base.svg

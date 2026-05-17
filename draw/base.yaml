@@ -1,0 +1,173 @@
+# Hand-curated keymap-drawer YAML for Geist KLOR (LAYOUT_polydactyl, 44 keys)
+# Style: urob/zmk-config — two-layer SVG (Base + Combos) with color-coded corner legends
+#
+# Corner legend conventions:
+#   tl (teal, FN)   ← NUM layer F-keys
+#   tr (yellow,NAV) ← NAV layer bindings
+#   bl (orange,NUM) ← NUM layer digits / numpad
+#   br (green, SYS) ← RAISE layer bindings
+#
+# Layers folded in: BASE, NAV, NUM, RAISE.
+# Dropped:
+#   SYSTEM  — almost entirely &trans; only &macro_siai on the ?/! position (pos 34) is not rendered.
+#   SCROLL  — encoder-only modifier; surfaced via the hold legend on pos 29 + footer note.
+#   LEADER  — sticky-layer-only; entered via combo S+D+F (shown on the Combos page).
+
+layout:
+  qmk_keyboard: klor
+  qmk_layout: LAYOUT_polydactyl
+
+# Encoders are not modeled by the KLOR physical layout in keymap-drawer (no sensor
+# positions defined), so the SCROLL layer surfaces as a hold legend on pos 29 only:
+#   Left encoder:  rotate = ↑ / ↓
+#   Right encoder: rotate = PgUp / PgDn  (vertical scroll)
+#                  hold &mo SCROLL on pos 29 → rotate becomes ← / → (horizontal scroll)
+#
+# Note: a `draw_config.footer_text` override would normally carry this note, but
+# keymap-drawer's YAML-level draw_config merge drops the custom `svg_style` from
+# keymap-drawer.yaml (svg_style has `exclude=True` in the Config model), which
+# kills the gruvbox theme. So we leave draw_config alone and surface the encoder
+# state through the hold-legend on pos 29 + this comment.
+
+layers:
+  Base:
+    # ───── Top row (positions 0–9) ───────────────────────────────────────────
+    - {t: Q,              br: BT1}                                     # 0
+    - {t: W,  tl: F9,     br: BT2}                                     # 1
+    - {t: E,  tl: F10,    br: BT3}                                     # 2
+    - {t: R,  tl: F11,    br: BT4}                                     # 3
+    - {t: T,  tl: F12,    br: Out}                                     # 4
+    - {t: Y,              tr: PgUp}                                    # 5
+    - {t: U,                            bl: "7"}                       # 6
+    - {t: I,              tr: "↑",      bl: "8"}                       # 7
+    - {t: O,                            bl: "9"}                       # 8
+    - {t: P,              tr: Home}                                    # 9
+    # ───── Home row (positions 10–21) ────────────────────────────────────────
+    - {type: trans}                                                    # 10 — outer L pinky
+    - {t: A,  h: Gui,                              br: BTclr}          # 11 — &td_a (tap=A/hold=Gui, double-tap=Å)
+    - {t: S,  h: Alt,     tl: F5}                                      # 12 — &hm LALT S
+    - {t: D,  h: Shift,   tl: F6}                                      # 13 — &hm LSHFT D
+    - {t: F,  h: Ctrl,    tl: F7}                                      # 14 — &hm LCTRL F
+    - {t: G,              tl: F8}                                      # 15
+    - {t: H,              tr: PgDn,                br: Bspc}           # 16
+    - {t: J,  h: Gui,     tr: "←",      bl: "4"}                       # 17 — &hm RGUI J
+    - {t: K,  h: Shift,   tr: "↓",      bl: "5"}                       # 18 — &hm RSHFT K
+    - {t: L,  h: Alt,     tr: "→",      bl: "6"}                       # 19 — &hm RALT L
+    - {t: ";", h: Ctrl,   tr: End,                 br: Ö}              # 20 — &hm RCTRL SEMI
+    - {type: trans}                                                    # 21 — outer R pinky
+    # ───── Bottom row + 2 middle thumbs (positions 22–35) ────────────────────
+    - {type: trans}                                                    # 22 — outer L pinky
+    - {t: Z}                                                           # 23
+    - {t: X,              tl: F1}                                      # 24
+    - {t: C,              tl: F2}                                      # 25
+    - {t: V,              tl: F3}                                      # 26
+    - {t: B,              tl: F4}                                      # 27
+    - {t: Enter}                                                       # 28 — inner thumb (left of split)
+    - {t: "─", h: "Scrl↔"}                                             # 29 — &mo SCROLL: hold flips right enc to horiz
+    - {t: N}                                                           # 30
+    - {t: M,                            bl: "1"}                       # 31
+    - {t: ",",                          bl: "2"}                       # 32 — &mm_comma (shifted: ;)
+    - {t: ".",                          bl: "3"}                       # 33 — &mm_dot   (shifted: :)
+    - {t: "?"}                                                         # 34 — &mm_qmark (shifted: !)
+    - {type: trans}                                                    # 35 — outer R pinky
+    # ───── Thumb row (positions 36–43) ───────────────────────────────────────
+    - {t: "─", h: SYS}                                                 # 36 — &mo SYSTEM
+    - {t: Spc, h: RAISE}                                               # 37 — &lt RAISE SPACE
+    - {type: trans}                                                    # 38
+    - {type: trans}                                                    # 39
+    - {type: trans}                                                    # 40
+    - {t: Enter}                                                       # 41
+    - {t: Spc, h: RAISE}                                               # 42 — &lt RAISE SPACE
+    - {t: Smart, h: "NAV/NUM",          bl: "0"}                       # 43 — &td_nav_num
+
+  Combos:
+    # Clean background for the combo diagram — every key rendered as transparent.
+    - {type: trans}   # 0
+    - {type: trans}   # 1
+    - {type: trans}   # 2
+    - {type: trans}   # 3
+    - {type: trans}   # 4
+    - {type: trans}   # 5
+    - {type: trans}   # 6
+    - {type: trans}   # 7
+    - {type: trans}   # 8
+    - {type: trans}   # 9
+    - {type: trans}   # 10
+    - {type: trans}   # 11
+    - {type: trans}   # 12
+    - {type: trans}   # 13
+    - {type: trans}   # 14
+    - {type: trans}   # 15
+    - {type: trans}   # 16
+    - {type: trans}   # 17
+    - {type: trans}   # 18
+    - {type: trans}   # 19
+    - {type: trans}   # 20
+    - {type: trans}   # 21
+    - {type: trans}   # 22
+    - {type: trans}   # 23
+    - {type: trans}   # 24
+    - {type: trans}   # 25
+    - {type: trans}   # 26
+    - {type: trans}   # 27
+    - {type: trans}   # 28
+    - {type: trans}   # 29
+    - {type: trans}   # 30
+    - {type: trans}   # 31
+    - {type: trans}   # 32
+    - {type: trans}   # 33
+    - {type: trans}   # 34
+    - {type: trans}   # 35
+    - {type: trans}   # 36
+    - {type: trans}   # 37
+    - {type: trans}   # 38
+    - {type: trans}   # 39
+    - {type: trans}   # 40
+    - {type: trans}   # 41
+    - {type: trans}   # 42
+    - {type: trans}   # 43
+
+combos:
+  # ── Navigation ──────────────────────────────────────────────────────────────
+  - {p: [1, 2],     k: Esc,    l: [Combos]}
+  - {p: [3, 4],     k: Del,    l: [Combos]}
+  - {p: [5, 6],     k: Del,    l: [Combos]}
+  - {p: [12, 13],   k: Tab,    l: [Combos]}
+  - {p: [14, 15],   k: Bspc,   l: [Combos]}
+  - {p: [16, 17],   k: Bspc,   l: [Combos]}
+  - {p: [14, 17],   k: Caps,   l: [Combos]}
+  # ── Clipboard ───────────────────────────────────────────────────────────────
+  - {p: [24, 25],   k: Copy,   l: [Combos]}
+  - {p: [25, 26],   k: Paste,  l: [Combos]}
+  - {p: [24, 26],   k: Cut,    l: [Combos], align: bottom, offset: 0.15}
+  # ── Symbols: left side vertical (top → home) ────────────────────────────────
+  - {p: [4, 15],    k: "%",    l: [Combos]}
+  - {p: [3, 14],    k: "$",    l: [Combos]}
+  - {p: [2, 13],    k: "#",    l: [Combos]}
+  - {p: [1, 12],    k: "@",    l: [Combos]}
+  # ── Symbols: left side vertical (home → bottom) ─────────────────────────────
+  - {p: [13, 25],   k: "\\",   l: [Combos]}
+  - {p: [14, 26],   k: "=",    l: [Combos]}
+  - {p: [15, 27],   k: "~",    l: [Combos]}
+  - {p: [12, 24],   k: "'/`",  l: [Combos]}      # &td_apos_grave: tap=' , double-tap=`
+  # ── Symbols: right side vertical (top → home) ───────────────────────────────
+  - {p: [5, 16],    k: "^",    l: [Combos]}
+  - {p: [6, 17],    k: "+",    l: [Combos]}
+  - {p: [7, 18],    k: "*",    l: [Combos]}
+  - {p: [8, 19],    k: "&",    l: [Combos]}
+  # ── Symbols: right side vertical (home → bottom) ────────────────────────────
+  - {p: [16, 30],   k: "_",    l: [Combos]}
+  - {p: [17, 31],   k: "-",    l: [Combos]}
+  - {p: [18, 32],   k: "/",    l: [Combos]}
+  - {p: [19, 33],   k: "|",    l: [Combos]}
+  # ── Brackets / parens ───────────────────────────────────────────────────────
+  - {p: [6, 7],     k: "(",    l: [Combos]}
+  - {p: [7, 8],     k: ")",    l: [Combos]}
+  - {p: [17, 18],   k: "{",    l: [Combos]}
+  - {p: [18, 19],   k: "}",    l: [Combos]}
+  - {p: [31, 32],   k: "[",    l: [Combos]}
+  - {p: [32, 33],   k: "]",    l: [Combos]}
+  # ── Special characters ──────────────────────────────────────────────────────
+  - {p: [11, 12],   k: "Å",    l: [Combos]}
+  # ── Leader (sticky LEADER layer; LEADER currently has just C-W on W=pos 1) ──
+  - {p: [12, 13, 14], k: Lead, l: [Combos], align: top, offset: 1.35}
