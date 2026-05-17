@@ -2,9 +2,7 @@
 
 Personal ZMK firmware configuration for the **KLOR** split ergonomic keyboard.
 
-![Keymap Overview](draw/overview.svg)
-
-> Full per-layer visualization: [keymap.png](draw/keymap.png)
+![Keymap Overview](draw/base.svg)
 
 ---
 
