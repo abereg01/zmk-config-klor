@@ -26,6 +26,10 @@ parse_config:
     "&kp LG(LC(LS(A)))": PinA.
     "&kp LG(LC(LS(Q)))": PinW.
 
+    "&kp LA(TAB)": Alt+Tab
+    "&kp LA(LS(TAB))": "⇧Alt+Tab"
+    "&macro_siai": SIAI
+
     "&swapper": NWin
     "&kp LS(TAB)": PWin
     "&dot_spc": Sentence
@@ -175,7 +179,7 @@ parse_config:
 draw_config:
   append_colon_to_layer_header: false
   dark_mode: false
-  footer_text: "urob/zmk-config"
+  footer_text: "scoob/KLOR"
   glyph_tap_size: 15
   glyph_hold_size: 12
   glyph_shifted_size: 10
@@ -188,17 +192,18 @@ draw_config:
     svg path { fill: inherit; }
 
     svg.keymap {
-        --color-bg:      #7c6f64;
-        --color-key:     #fbf1c7;
-        --color-text:    #3c3836;
-        --color-ghost:   #928374;
+        --color-bg:      #eceff4;
+        --color-key:     #2e3440;
+        --color-text:    #eceff4;
+        --color-ghost:   #d8dee9;
         --color-dendron: #d5c4a1;
         --color-held:    #bdae93;
 
-        --color-fn:      #458588;
-        --color-nav:     #d79921;
-        --color-num:     #d65d0e;
-        --color-sys:     #689d6a;
+        --color-fn:      #88c0d0;
+        --color-nav:     #ebcb8b;
+        --color-num:     #d08770;
+        --color-sys:     #a3be8c;
+        --color-nm:      #b48ead;
 
         fill: var(--color-text);
         background-color: var(--color-bg);
@@ -216,7 +221,7 @@ draw_config:
 
     text.tap     { font-weight: 500; }
     text.hold    { font-weight: 400; font-size: 13px; }
-    text.shifted { font-weight: 400; font-size: 11px; }
+    text.shifted { font-weight: 400; font-size: 9px; }
     text.combo, text.left, text.right, text.tl, text.tr, text.bl, text.br { font-size: 10px; }
 
     text.hold, text.bl, text.br    { text-anchor: middle; dominant-baseline: auto; }
@@ -246,12 +251,23 @@ draw_config:
     text.tr, use.tr { fill: var(--color-nav); }
     text.bl, use.bl { fill: var(--color-num); }
     text.br, use.br { fill: var(--color-sys); }
+    text.nm, use.nm { fill: var(--color-nm); }
 
-    .keypos-30 text.hold { fill: var(--color-nav); }
-    .keypos-31 text.hold { fill: var(--color-fn); }
-    .keypos-32 text.hold { fill: var(--color-num); font-size: 15px; }
-    .keypos-32 text.tap  { fill: var(--color-num); }
-    .keypos-33 text.hold { font-size: 15px; }
+    /* Per-key tints (saegewerk 0..37 index space — see draw/base.yaml).
+       Tint the rect so the whole key glows in the accent color. */
+    .keypos-32 rect.key { fill: var(--color-fn); }    /* mo SYSTEM        thumb (left)         — orange */
+    .keypos-33 rect.key { fill: var(--color-sys); }    /* lt RAISE SPACE   thumb (left)         — green  */
+    .keypos-36 rect.key { fill: var(--color-sys); }    /* lt RAISE SPACE   thumb (right)        — green  */
+    .keypos-37 rect.key { fill: var(--color-nav); }    /* td_nav_num       thumb (rightmost)    — yellow */
+
+    /* Dark legends on tinted-background keys for contrast (Nord palette).
+       Same-specificity rules below re-apply the per-corner accents for pos 37. */
+    .keypos-32 text,
+    .keypos-33 text,
+    .keypos-36 text,
+    .keypos-37 text      { fill: var(--color-key); }   /* dark slate on the tinted keys */
+    .keypos-37 text.hold { fill: var(--color-nm); }    /* td_nav_num: NUM rendered in purple */
+    .keypos-37 text.bl   { fill: var(--color-num); }   /* td_nav_num: 0 stays in num-orange  */
 
     .icon-tabler > path                             { fill: inherit; stroke: inherit; stroke-width: 2; }
     .icon-tabler > path[stroke="none"][fill="none"] { visibility: hidden; }
@@ -269,5 +285,6 @@ draw_config:
             --color-nav:     #fabd2f;
             --color-num:     #d65d0e;
             --color-sys:     #689d6a;
+            --color-nm:      #b48ead;
         }
     }

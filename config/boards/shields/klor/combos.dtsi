@@ -113,19 +113,10 @@
         };
 
         // ── Symbols: left side vertical (top → home) ───────────────────────────
-        // T + G  →  %  [BASE only]
-        combo_prcnt {
-            timeout-ms = <50>;
-            key-positions = <4 15>;
-            bindings = <&kp PRCNT>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE>;
-        };
-
-        // R + F  →  $  [BASE only]
+        // T + G  →  $  [BASE only]
         combo_dllr {
             timeout-ms = <50>;
-            key-positions = <3 14>;
+            key-positions = <4 15>;
             bindings = <&kp DLLR>;
             require-prior-idle-ms = <100>;
             layers = <BASE>;
@@ -214,10 +205,10 @@
             layers = <BASE>;
         };
 
-        // O + L  →  &  [BASE only]
+        // E + R  →  &  [BASE only]
         combo_amps {
             timeout-ms = <50>;
-            key-positions = <8 19>;
+            key-positions = <2 3>;
             bindings = <&kp AMPS>;
             require-prior-idle-ms = <100>;
             layers = <BASE>;
@@ -333,6 +324,25 @@
             bindings = <&sl LEADER>;
             require-prior-idle-ms = <100>;
             layers = <BASE>;
+        };
+
+        // ── System layer combos ────────────────────────────────────────────────
+        // S + D  →  Alt + Tab  [SYSTEM only]
+        // No require-prior-idle-ms: the SYSTEM thumb key press would reset the idle timer
+        combo_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp LA(TAB)>;
+            layers = <SYSTEM>;
+        };
+
+        // X + C  →  Alt + Shift + Tab  [SYSTEM only]
+        // No require-prior-idle-ms: the SYSTEM thumb key press would reset the idle timer
+        combo_alt_shift_tab {
+            timeout-ms = <50>;
+            key-positions = <24 25>;
+            bindings = <&kp LA(LS(TAB))>;
+            layers = <SYSTEM>;
         };
 
     };
