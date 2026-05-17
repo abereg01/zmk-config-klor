@@ -48,6 +48,13 @@ defs = collect_vars(svg)
 svg  = resolve_vars(svg, defs)
 svg  = inject_bg_rect(svg, defs)
 
+# cairosvg can't resolve 'Calibri' or 'system-ui' — swap to fonts it can find,
+# so any remaining Unicode glyphs render correctly instead of appearing as ▯
+svg = svg.replace(
+    'font-family: Calibri, system-ui, sans-serif',
+    'font-family: "DejaVu Sans", Arial, Helvetica, sans-serif'
+)
+
 try:
     import cairosvg
     cairosvg.svg2png(bytestring=svg.encode('utf-8'), write_to=dst, scale=float(scale))

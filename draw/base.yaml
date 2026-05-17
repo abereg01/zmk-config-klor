@@ -42,7 +42,7 @@ layers:
     - {t: T,  bl: F12,    br: Out}                                     # 4
     - {t: Y,              tr: PgUp}                                    # 5
     - {t: U,                            bl: "7"}                       # 6
-    - {t: I,              tr: "↑",      bl: "8"}                       # 7
+    - {t: I,              tr: "$$mdi:arrow-up$$",      bl: "8"}                       # 7
     - {t: O,                            bl: "9"}                       # 8
     - {t: P,  s: Å,       tr: Home}                                    # 9 — &td_p: double-tap=Å
     # ───── Home row (positions 10–19) ────────────────────────────────────────
@@ -52,9 +52,9 @@ layers:
     - {t: F,  h: "$$mdi:apple-keyboard-control$$",   bl: F7}           # 13 — &hm LCTRL F
     - {t: G,              bl: F8}                                      # 14
     - {t: H,              tr: PgDn,                br: Bspc}           # 15
-    - {t: J,  h: "$$mdi:microsoft-windows$$",   tl: PDesk, tr: "←", bl: "4"}  # 16 — &hm RGUI J
-    - {t: K,  h: "$$mdi:apple-keyboard-shift$$",               tr: "↓", bl: "5"}  # 17 — &hm RSHFT K
-    - {t: L,  h: "$$mdi:apple-keyboard-option$$",  tl: NDesk, tr: "→", bl: "6"}  # 18 — &hm RALT L
+    - {t: J,  h: "$$mdi:microsoft-windows$$",   tl: PDesk, tr: "$$mdi:arrow-left$$", bl: "4"}  # 16 — &hm RGUI J
+    - {t: K,  h: "$$mdi:apple-keyboard-shift$$",               tr: "$$mdi:arrow-down$$", bl: "5"}  # 17 — &hm RSHFT K
+    - {t: L,  h: "$$mdi:apple-keyboard-option$$",  tl: NDesk, tr: "$$mdi:arrow-right$$", bl: "6"}  # 18 — &hm RALT L
     - {t: ";", h: "$$mdi:apple-keyboard-control$$", tr: End,            br: Ö}    # 19 — &hm RCTRL SEMI
     # ───── Bottom row + 2 middle thumbs (positions 20–31) ────────────────────
     - {t: Z,              br: BTclr}                                   # 20
@@ -62,8 +62,8 @@ layers:
     - {t: C,              bl: F2}                                      # 22
     - {t: V,              bl: F3}                                      # 23
     - {t: B,              bl: F4}                                      # 24
-    - {t: "↑/↓", h: "$$mdi:keyboard-return$$"}                                              # 25 — left enc: rotate=↑/↓, press=Enter
-    - {t: "↑/↓", h: "←/→"}                                             # 26 — &mo SCROLL: rotate=↑/↓, hold→rotate=←/→
+    - {t: "$$mdi:swap-vertical$$", h: "$$mdi:keyboard-return$$"}                                              # 25 — left enc: rotate=↑/↓, press=Enter
+    - {t: "$$mdi:swap-vertical$$", h: "$$mdi:swap-horizontal$$"}                                             # 26 — &mo SCROLL: rotate=↑/↓, hold→rotate=←/→
     - {t: N}                                                           # 27
     - {t: M,                            bl: "1"}                       # 28
     - {t: ",",  tl: "$$mdi:skip-backward$$", bl: "2"}                   # 29 — &mm_comma; SYSTEM: C_PREV
@@ -106,8 +106,8 @@ layers:
     - {t: C}                                                             # 22
     - {t: D}                                                             # 23
     - {t: V}                                                             # 24
-    - {t: "↑/↓", h: "$$mdi:keyboard-return$$"}                                              # 25 — left enc (same as BASE)
-    - {t: "↑/↓", h: "←/→"}                                              # 26 — right enc (same as BASE)
+    - {t: "$$mdi:swap-vertical$$", h: "$$mdi:keyboard-return$$"}                                              # 25 — left enc (same as BASE)
+    - {t: "$$mdi:swap-vertical$$", h: "$$mdi:swap-horizontal$$"}                                              # 26 — right enc (same as BASE)
     - {t: K}                                                             # 27
     - {t: H}                                                             # 28
     - {t: ","}                                                           # 29
