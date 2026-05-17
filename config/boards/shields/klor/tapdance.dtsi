@@ -3,18 +3,34 @@
 
         td_a: tap_dance_a {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_A_ARING";       // tap → A (GUI when held) | double-tap → Å (A-ring)
+            label = "TD_A_AE";             // tap → A (GUI when held) | double-tap → Ä (A-umlaut)
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&hm LGUI A>, <&kp RA(A)>;  // RA(A) = AltGr+A = Å
+            bindings = <&hm LGUI A>, <&kp RA(Q)>;  // RA(Q) = AltGr+Q = Ä  (adjust if your layout differs)
         };
 
-        td_apos_grave: tap_dance_apos_grave {
+        td_p: tap_dance_p {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_APOS_GRAVE";
+            label = "TD_P_ARING";          // tap → P | double-tap → Å (A-ring)
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp APOS>, <&kp GRAVE>;
+            bindings = <&kp P>, <&kp RA(A)>;        // RA(A) = AltGr+A = Å
+        };
+
+        td_semi_aa: tap_dance_semi_aring {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SEMI_ARING";       // tap → ; | double-tap → Å  (Colemak top-right)
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SEMI>, <&kp RA(A)>;     // RA(A) = AltGr+A = Å
+        };
+
+        td_o_colemak: tap_dance_o_colemak {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_O_OE";             // tap → O (RCTRL when held) | double-tap → Ö  (Colemak home-right)
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&hm RCTRL O>, <&kp RA(O)>;  // RA(O) = AltGr+O = Ö
         };
 
         td_nav_num: tap_dance_nav_num {

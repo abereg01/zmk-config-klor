@@ -168,11 +168,11 @@
             layers = <BASE COLEMAK>;
         };
 
-        // S + X  →  ' (tap) / ` (double-tap)  [BASE only]
-        combo_apos {
+        // S + X  →  `  (grave only — ' moved to L+.)
+        combo_grave {
             timeout-ms = <50>;
             key-positions = <12 24>;
-            bindings = <&td_apos_grave>;
+            bindings = <&kp GRAVE>;
             require-prior-idle-ms = <100>;
             layers = <BASE COLEMAK>;
         };
@@ -242,11 +242,29 @@
             layers = <BASE COLEMAK>;
         };
 
-        // L + .  →  |  [BASE only]
+        // R + F  →  |  (moved from L+.)
         combo_pipe {
             timeout-ms = <50>;
-            key-positions = <19 33>;
+            key-positions = <3 14>;
             bindings = <&kp PIPE>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // O + L  →  "  [BASE + COLEMAK]
+        combo_dqt {
+            timeout-ms = <50>;
+            key-positions = <8 19>;
+            bindings = <&kp DQT>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // L + .  →  '  [BASE + COLEMAK]
+        combo_sqt {
+            timeout-ms = <50>;
+            key-positions = <19 33>;
+            bindings = <&kp SQT>;
             require-prior-idle-ms = <100>;
             layers = <BASE COLEMAK>;
         };
@@ -302,16 +320,6 @@
             timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&kp RBKT>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // ── Special characters ─────────────────────────────────────────────────
-        // A + S  →  Å (A-ring)  [BASE only]
-        combo_aa {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp RA(A)>;
             require-prior-idle-ms = <100>;
             layers = <BASE COLEMAK>;
         };

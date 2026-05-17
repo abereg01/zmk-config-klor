@@ -44,9 +44,9 @@ layers:
     - {t: U,                            bl: "7"}                       # 6
     - {t: I,              tr: "↑",      bl: "8"}                       # 7
     - {t: O,                            bl: "9"}                       # 8
-    - {t: P,              tr: Home}                                    # 9
+    - {t: P,  s: Å,       tr: Home}                                    # 9 — &td_p: double-tap=Å
     # ───── Home row (positions 10–19) ────────────────────────────────────────
-    - {t: A,  h: "$$mdi:microsoft-windows$$",                          br: BTclr}  # 10 — &td_a (tap=A/hold=Gui, double-tap=Å)
+    - {t: A,  h: "$$mdi:microsoft-windows$$", s: Ä}                                 # 10 — &td_a: double-tap=Ä
     - {t: S,  h: "$$mdi:apple-keyboard-option$$",    bl: F5}           # 11 — &hm LALT S
     - {t: D,  h: "$$mdi:apple-keyboard-shift$$",     bl: F6}           # 12 — &hm LSHFT D
     - {t: F,  h: "$$mdi:apple-keyboard-control$$",   bl: F7}           # 13 — &hm LCTRL F
@@ -57,12 +57,12 @@ layers:
     - {t: L,  h: "$$mdi:apple-keyboard-option$$",  tl: NDesk, tr: "→", bl: "6"}  # 18 — &hm RALT L
     - {t: ";", h: "$$mdi:apple-keyboard-control$$", tr: End,            br: Ö}    # 19 — &hm RCTRL SEMI
     # ───── Bottom row + 2 middle thumbs (positions 20–31) ────────────────────
-    - {t: Z}                                                           # 20
+    - {t: Z,              br: BTclr}                                   # 20
     - {t: X,              bl: F1}                                      # 21
     - {t: C,              bl: F2}                                      # 22
     - {t: V,              bl: F3}                                      # 23
     - {t: B,              bl: F4}                                      # 24
-    - {t: "↑/↓", h: Enter}                                              # 25 — left enc: rotate=↑/↓, press=Enter
+    - {t: "↑/↓", h: "$$mdi:keyboard-return$$"}                                              # 25 — left enc: rotate=↑/↓, press=Enter
     - {t: "↑/↓", h: "←/→"}                                             # 26 — &mo SCROLL: rotate=↑/↓, hold→rotate=←/→
     - {t: N}                                                           # 27
     - {t: M,                            bl: "1"}                       # 28
@@ -71,10 +71,10 @@ layers:
     - {t: "?",  tl: "$$mdi:skip-forward$$"}                             # 31 — &mm_qmark; SYSTEM: C_NEXT
     # ───── Thumb row (positions 32–37) ───────────────────────────────────────
     - {t: SYS}                                                          # 32 — &mo_tog: tap=tog SYSTEM, hold=mo SYSTEM
-    - {t: Spc, h: RAISE}                                                # 33 — &lt RAISE SPACE
+    - {t: "$$mdi:keyboard-space$$", h: RAISE}                                                # 33 — &lt RAISE SPACE
     - {t: "CMK DH"}                                                     # 34 — &td_colemak: double-tap to toggle Colemak DH
-    - {t: Enter}                                                        # 35
-    - {t: Spc, h: RAISE}                                                # 36 — &lt RAISE SPACE
+    - {t: "$$mdi:keyboard-return$$"}                                                        # 35
+    - {t: "$$mdi:keyboard-space$$", h: RAISE}                                                # 36 — &lt RAISE SPACE
     - {t: NAV, h: "NUM",          bl: "0"}                              # 37 — &td_nav_num
 
   Colemak DH:
@@ -88,9 +88,9 @@ layers:
     - {t: L}                                                             # 6
     - {t: U}                                                             # 7
     - {t: Y}                                                             # 8
-    - {t: ";"}                                                           # 9
+    - {t: ";", s: Å}                                                    # 9 — &td_semi_aa: double-tap=Å
     # ───── Home row (positions 10–19) ────────────────────────────────────────
-    - {t: A,  h: "$$mdi:microsoft-windows$$"}                           # 10 — &td_a (Å on double-tap)
+    - {t: A,  h: "$$mdi:microsoft-windows$$", s: Ä}                    # 10 — &td_a: double-tap=Ä
     - {t: R,  h: "$$mdi:apple-keyboard-option$$"}                       # 11
     - {t: S,  h: "$$mdi:apple-keyboard-shift$$"}                        # 12
     - {t: T,  h: "$$mdi:apple-keyboard-control$$"}                      # 13
@@ -99,14 +99,14 @@ layers:
     - {t: N,  h: "$$mdi:microsoft-windows$$"}                           # 16
     - {t: E,  h: "$$mdi:apple-keyboard-shift$$"}                        # 17
     - {t: I,  h: "$$mdi:apple-keyboard-option$$"}                       # 18
-    - {t: O,  h: "$$mdi:apple-keyboard-control$$"}                      # 19
+    - {t: O,  h: "$$mdi:apple-keyboard-control$$", s: Ö}               # 19 — &td_o_colemak: double-tap=Ö
     # ───── Bottom row + 2 middle thumbs (positions 20–31) ────────────────────
     - {t: Z}                                                             # 20
     - {t: X}                                                             # 21
     - {t: C}                                                             # 22
     - {t: D}                                                             # 23
     - {t: V}                                                             # 24
-    - {t: "↑/↓", h: Enter}                                              # 25 — left enc (same as BASE)
+    - {t: "↑/↓", h: "$$mdi:keyboard-return$$"}                                              # 25 — left enc (same as BASE)
     - {t: "↑/↓", h: "←/→"}                                              # 26 — right enc (same as BASE)
     - {t: K}                                                             # 27
     - {t: H}                                                             # 28
@@ -115,10 +115,10 @@ layers:
     - {t: "?"}                                                           # 31
     # ───── Thumb row (positions 32–37) ───────────────────────────────────────
     - {t: SYS}                                                           # 32
-    - {t: Spc, h: RAISE}                                                 # 33
+    - {t: "$$mdi:keyboard-space$$", h: RAISE}                                                 # 33
     - {t: "CMK DH"}                                                      # 34 — double-tap to exit Colemak
-    - {t: Enter}                                                         # 35
-    - {t: Spc, h: RAISE}                                                 # 36
+    - {t: "$$mdi:keyboard-return$$"}                                                         # 35
+    - {t: "$$mdi:keyboard-space$$", h: RAISE}                                                 # 36
     - {t: NAV, h: "NUM", bl: "0"}                                        # 37
 
   Combos:
@@ -177,24 +177,26 @@ combos:
   - {p: [21, 23],   k: Cut,    l: [Combos], align: bottom, offset: 0.15}
   # ── Symbols: left side vertical (top → home) ────────────────────────────────
   - {p: [4, 14],    k: "$",    l: [Combos]}
+  - {p: [3, 13],    k: "|",    l: [Combos]}
   - {p: [2, 12],    k: "#",    l: [Combos]}
   - {p: [1, 11],    k: "@",    l: [Combos]}
   # ── Symbols: left side vertical (home → bottom) ─────────────────────────────
   - {p: [12, 22],   k: "\\",   l: [Combos]}
   - {p: [13, 23],   k: "=",    l: [Combos]}
   - {p: [14, 24],   k: "~",    l: [Combos]}
-  - {p: [11, 21],   k: "'/`",  l: [Combos]}      # &td_apos_grave: tap=' , double-tap=`
+  - {p: [11, 21],   k: "`",    l: [Combos]}
   # ── Symbols: right side vertical (top → home) ───────────────────────────────
   - {p: [5, 15],    k: "^",    l: [Combos]}
   - {p: [6, 16],    k: "+",    l: [Combos]}
   - {p: [7, 17],    k: "*",    l: [Combos]}
+  - {p: [8, 18],    k: '"',    l: [Combos]}
   # ── Symbols: horizontal top row ──────────────────────────────────────────────
   - {p: [2, 3],     k: "&",    l: [Combos]}
   # ── Symbols: right side vertical (home → bottom) ────────────────────────────
   - {p: [15, 27],   k: "_",    l: [Combos]}
   - {p: [16, 28],   k: "-",    l: [Combos]}
   - {p: [17, 29],   k: "/",    l: [Combos]}
-  - {p: [18, 30],   k: "|",    l: [Combos]}
+  - {p: [18, 30],   k: "'",    l: [Combos]}
   # ── Brackets / parens ───────────────────────────────────────────────────────
   - {p: [6, 7],     k: "(",    l: [Combos]}
   - {p: [7, 8],     k: ")",    l: [Combos]}
@@ -202,8 +204,6 @@ combos:
   - {p: [17, 18],   k: "}",    l: [Combos]}
   - {p: [28, 29],   k: "[",    l: [Combos]}
   - {p: [29, 30],   k: "]",    l: [Combos]}
-  # ── Special characters ──────────────────────────────────────────────────────
-  - {p: [10, 11],   k: "Å",    l: [Combos]}
   # ── System-layer combos (fn-tinted background) ───────────────────────────────
 #  - {p: [11, 12],   k: {t: "Alt+Tab",  type: "fn"}, l: [Combos]}
 #  - {p: [21, 22],   k: {t: "⇧Alt+Tab", type: "fn"}, l: [Combos]}
