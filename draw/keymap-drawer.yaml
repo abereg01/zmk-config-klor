@@ -43,6 +43,10 @@ parse_config:
     "&td_colemak": { "t": "CMK DH" }
     "&mo_tog SYSTEM SYSTEM": SYS
 
+    "&mm_plus_equal": { "t": "+", "s": "=" }
+    "&mm_minus_under": { "t": "-", "s": "_" }
+    "&mm_fslh_bslh":  { "t": "/", "s": "\\" }
+
     "&mmv MOVE_UP": Mouse ↑
     "&mmv MOVE_DOWN": Mouse ↓
     "&mmv MOVE_LEFT": Mouse ←

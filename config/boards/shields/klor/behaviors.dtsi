@@ -22,5 +22,29 @@
             bindings = <&kp>, <&kp>;
         };
 
+        mm_plus_equal: mm_plus_equal {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_PLUS_EQUAL";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp EQUAL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_minus_under: mm_minus_under {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_MINUS_UNDER";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_fslh_bslh: mm_fslh_bslh {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_FSLH_BSLH";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 };

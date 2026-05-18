@@ -34,7 +34,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        // S + D  →  Tab  [BASE only]
+        // S + D  →  Tab  [BASE + COLEMAK]
         combo_tab {
             timeout-ms = <50>;
             key-positions = <12 13>;
@@ -75,7 +75,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        // F + J  →  Caps Word  [BASE only]
+        // F + J  →  Caps Word  [BASE + COLEMAK]
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <14 17>;
@@ -85,7 +85,7 @@
         };
 
         // ── Clipboard ──────────────────────────────────────────────────────────
-        // X + C  →  Copy  [BASE only]
+        // X + C  →  Copy  [BASE + COLEMAK]
         combo_copy {
             timeout-ms = <50>;
             key-positions = <24 25>;
@@ -94,7 +94,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // C + V  →  Paste  [BASE only]
+        // C + V  →  Paste  [BASE + COLEMAK]
         combo_paste {
             timeout-ms = <50>;
             key-positions = <25 26>;
@@ -103,7 +103,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // X + V  →  Cut  [BASE only]
+        // X + V  →  Cut  [BASE + COLEMAK]
         combo_cut {
             timeout-ms = <50>;
             key-positions = <24 26>;
@@ -112,8 +112,8 @@
             layers = <BASE COLEMAK>;
         };
 
-        // ── Symbols: left side vertical (top → home) ───────────────────────────
-        // T + G  →  $  [BASE only]
+        // ── Symbols: left side ─────────────────────────────────────────────────
+        // T + G  →  $  [BASE + COLEMAK]  (vertical top→home)
         combo_dllr {
             timeout-ms = <50>;
             key-positions = <4 15>;
@@ -122,127 +122,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // E + D  →  #  [BASE only]
-        combo_hash {
-            timeout-ms = <50>;
-            key-positions = <2 13>;
-            bindings = <&kp HASH>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // W + S  →  @  [BASE only]
-        combo_at {
-            timeout-ms = <50>;
-            key-positions = <1 12>;
-            bindings = <&kp AT>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // ── Symbols: left side vertical (home → bottom) ───────────────────────
-        // D + C  →  backslash  [BASE only]
-        combo_bslh {
-            timeout-ms = <50>;
-            key-positions = <13 25>;
-            bindings = <&kp BSLH>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // F + V  →  =  [BASE only]
-        combo_equal {
-            timeout-ms = <50>;
-            key-positions = <14 26>;
-            bindings = <&kp EQUAL>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // G + B  →  ~  [BASE only]
-        combo_tilde {
-            timeout-ms = <50>;
-            key-positions = <15 27>;
-            bindings = <&kp TILDE>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // S + X  →  `  (grave only — ' moved to L+.)
-        combo_grave {
-            timeout-ms = <50>;
-            key-positions = <12 24>;
-            bindings = <&kp GRAVE>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // ── Symbols: right side vertical (top → home) ─────────────────────────
-        // Y + H  →  ^  [BASE only]
-        combo_caret {
-            timeout-ms = <50>;
-            key-positions = <5 16>;
-            bindings = <&kp CARET>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // U + J  →  +  [BASE only]
-        combo_plus {
-            timeout-ms = <50>;
-            key-positions = <6 17>;
-            bindings = <&kp PLUS>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // I + K  →  *  [BASE only]
-        combo_star {
-            timeout-ms = <50>;
-            key-positions = <7 18>;
-            bindings = <&kp STAR>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // E + R  →  &  [BASE only]
-        combo_amps {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            bindings = <&kp AMPS>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // ── Symbols: right side vertical (home → bottom) ──────────────────────
-        // H + N  →  _  [BASE only]
-        combo_under {
-            timeout-ms = <50>;
-            key-positions = <16 30>;
-            bindings = <&kp UNDER>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // J + M  →  -  [BASE only]
-        combo_minus {
-            timeout-ms = <50>;
-            key-positions = <17 31>;
-            bindings = <&kp MINUS>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // K + ,  →  /  [BASE only]
-        combo_fslh {
-            timeout-ms = <50>;
-            key-positions = <18 32>;
-            bindings = <&kp FSLH>;
-            require-prior-idle-ms = <100>;
-            layers = <BASE COLEMAK>;
-        };
-
-        // R + F  →  |  (moved from L+.)
+        // R + F  →  |  [BASE + COLEMAK]  (vertical top→home)
         combo_pipe {
             timeout-ms = <50>;
             key-positions = <3 14>;
@@ -251,26 +131,108 @@
             layers = <BASE COLEMAK>;
         };
 
-        // O + L  →  "  [BASE + COLEMAK]
-        combo_dqt {
+        // Q + W  →  ~  [BASE + COLEMAK]
+        combo_tilde {
             timeout-ms = <50>;
-            key-positions = <8 19>;
-            bindings = <&kp DQT>;
+            key-positions = <0 1>;
+            bindings = <&kp TILDE>;
             require-prior-idle-ms = <100>;
             layers = <BASE COLEMAK>;
         };
 
-        // L + .  →  '  [BASE + COLEMAK]
-        combo_sqt {
+        // E + R  →  &  [BASE + COLEMAK]
+        combo_amps {
             timeout-ms = <50>;
-            key-positions = <19 33>;
+            key-positions = <2 3>;
+            bindings = <&kp AMPS>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // A + S  →  @  [BASE + COLEMAK]
+        combo_at {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp AT>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // D + F  →  #  [BASE + COLEMAK]
+        combo_hash {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp HASH>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // S + X  →  `  [BASE + COLEMAK]  (diagonal home→bottom)
+        combo_grave {
+            timeout-ms = <50>;
+            key-positions = <12 24>;
+            bindings = <&kp GRAVE>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // Z + X  →  / / \  [BASE + COLEMAK]
+        combo_fslh_bslh {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&mm_fslh_bslh>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // ── Symbols: right side ────────────────────────────────────────────────
+        // Y + H  →  ^  [BASE + COLEMAK]  (vertical top→home)
+        combo_caret {
+            timeout-ms = <50>;
+            key-positions = <5 16>;
+            bindings = <&kp CARET>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // I + K  →  *  [BASE + COLEMAK]  (vertical top→home)
+        combo_star {
+            timeout-ms = <50>;
+            key-positions = <7 18>;
+            bindings = <&kp STAR>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // O + P  →  + / =  [BASE + COLEMAK]
+        combo_plus_equal {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&mm_plus_equal>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // L + ;  →  ' / "  [BASE + COLEMAK]
+        combo_sqt_dqt {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
             bindings = <&kp SQT>;
             require-prior-idle-ms = <100>;
             layers = <BASE COLEMAK>;
         };
 
-        // ── Brackets / parens: right side horizontal ───────────────────────────
-        // U + I  →  (   [BASE only, top row]
+        // . + ?  →  - / _  [BASE + COLEMAK]
+        combo_minus_under {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            bindings = <&mm_minus_under>;
+            require-prior-idle-ms = <100>;
+            layers = <BASE COLEMAK>;
+        };
+
+        // ── Brackets / parens ──────────────────────────────────────────────────
+        // U + I  →  (  [BASE + COLEMAK, top row]
         combo_lpar_top {
             timeout-ms = <50>;
             key-positions = <6 7>;
@@ -279,7 +241,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // I + O  →  )   [BASE only, top row]
+        // I + O  →  )  [BASE + COLEMAK, top row]
         combo_rpar_top {
             timeout-ms = <50>;
             key-positions = <7 8>;
@@ -288,7 +250,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // J + K  →  {   [BASE only, home row]
+        // J + K  →  {  [BASE + COLEMAK, home row]
         combo_lbrc_home {
             timeout-ms = <50>;
             key-positions = <17 18>;
@@ -297,7 +259,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // K + L  →  }   [BASE only, home row]
+        // K + L  →  }  [BASE + COLEMAK, home row]
         combo_rbrc_home {
             timeout-ms = <50>;
             key-positions = <18 19>;
@@ -306,7 +268,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // M + ,  →  [   [BASE only, bottom row]
+        // M + ,  →  [  [BASE + COLEMAK, bottom row]
         combo_lbkt {
             timeout-ms = <50>;
             key-positions = <31 32>;
@@ -315,7 +277,7 @@
             layers = <BASE COLEMAK>;
         };
 
-        // , + .  →  ]   [BASE only, bottom row]
+        // , + .  →  ]  [BASE + COLEMAK, bottom row]
         combo_rbkt {
             timeout-ms = <50>;
             key-positions = <32 33>;
